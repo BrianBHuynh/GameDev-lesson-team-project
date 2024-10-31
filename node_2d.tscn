@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgwjjxme12c1q"]
+
+[ext_resource type="PackedScene" uid="uid://b6610v2j1fh0j" path="res://Chase.tscn" id="2_mlamr"]
+[ext_resource type="Script" path="res://CollisionShape2D.gd" id="3_bxogh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pudtt"]
+size = Vector2(719.25, 129)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_mlamr")]
+position = Vector2(144, 96)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(144, 96)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(224, 480)
+shape = SubResource("RectangleShape2D_pudtt")
+debug_color = Color(0.521569, 0.431373, 0.968627, 1)
+script = ExtResource("3_bxogh")

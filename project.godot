@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="GameDev Lesson team project"
-run/main_scene="res://KirbGame.tscn"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+run/main_scene="res://node_2d.tscn"
+config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [rendering]
