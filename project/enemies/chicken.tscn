@@ -74,3 +74,11 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_ywqvv")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -10.0
+offset_top = -18.0
+offset_right = 92.0
+offset_bottom = 9.0
+scale = Vector2(0.2, 0.2)
+value = 100.0
