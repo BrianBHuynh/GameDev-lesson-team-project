@@ -18,8 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalVars="*res://project/global_scripts/global_vars.gd"
-Saves="*res://project/global_scripts/saves.gd"
 SignalBus="*res://project/global_scripts/signal_bus.gd"
+Saves="*res://SaveDataManager.gd"
 
 [input]
 
