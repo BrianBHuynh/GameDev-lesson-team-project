@@ -6,6 +6,12 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+func save():
+	var save_dict = {
+		"pos_x" : position.x,
+		"pos_y" : position.y
+	}
+
 func _ready() -> void:
 	GlobalVars.player = self
 
