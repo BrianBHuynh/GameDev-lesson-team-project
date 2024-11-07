@@ -15,6 +15,12 @@ run/main_scene="res://project/scenes/main.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalVars="*res://project/global_scripts/global_vars.gd"
+Saves="*res://project/global_scripts/saves.gd"
+SignalBus="*res://project/global_scripts/signal_bus.gd"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
