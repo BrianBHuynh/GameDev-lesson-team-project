@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqaatoxns42rb"
-path="res://.godot/imported/kirb.png-9cf2baabec9045627e50f4a8f35378d5.ctex"
+path="res://.godot/imported/kirb.png-cfd2e067c7280dc20d90cf9148bfcc24.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://kirb.png"
-dest_files=["res://.godot/imported/kirb.png-9cf2baabec9045627e50f4a8f35378d5.ctex"]
+source_file="res://individual student folders/ernest/kirb.png"
+dest_files=["res://.godot/imported/kirb.png-cfd2e067c7280dc20d90cf9148bfcc24.ctex"]
 
 [params]
 

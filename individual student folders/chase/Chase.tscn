@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b6610v2j1fh0j"]
 
-[ext_resource type="Script" path="res://Chase.gd" id="1_phmfo"]
+[ext_resource type="Script" path="res://individual student folders/chase/Chase.gd" id="1_phmfo"]
 [ext_resource type="Texture2D" uid="uid://8mn44mrwwa2m" path="res://icon.svg" id="2_u0wng"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v8aab"]

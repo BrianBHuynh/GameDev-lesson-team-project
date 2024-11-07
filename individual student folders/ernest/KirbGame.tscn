@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://5xpesc7nf544"]
 
 [ext_resource type="Texture2D" uid="uid://8mn44mrwwa2m" path="res://icon.svg" id="1_u78dy"]
-[ext_resource type="PackedScene" uid="uid://cgwlfedybqldl" path="res://kirb.tscn" id="2_ynh5g"]
-[ext_resource type="Texture2D" uid="uid://dsltycbgpyr11" path="res://plat.png" id="3_qbixd"]
+[ext_resource type="PackedScene" uid="uid://cgwlfedybqldl" path="res://individual student folders/ernest/kirb.tscn" id="2_ynh5g"]
+[ext_resource type="Texture2D" uid="uid://dsltycbgpyr11" path="res://individual student folders/ernest/plat.png" id="3_qbixd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y7k6f"]
 size = Vector2(128, 32)

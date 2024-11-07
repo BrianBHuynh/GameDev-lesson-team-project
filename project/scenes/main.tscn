@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://41dtdkh6bamp"]
+
+[ext_resource type="PackedScene" uid="uid://j2nuep3bokkk" path="res://project/player/player.tscn" id="1_imogb"]
+[ext_resource type="PackedScene" uid="uid://0w2eynvcvskl" path="res://project/enemies/chicken.tscn" id="2_cusj0"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_imogb")]
+position = Vector2(352, 233)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(5, 5)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_cusj0")]
+position = Vector2(420, 226)

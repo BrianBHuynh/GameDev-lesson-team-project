@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsltycbgpyr11"
-path="res://.godot/imported/plat.png-9f35e595baa910282a031a8a93481279.ctex"
+uid="uid://c32pq54mp3f3n"
+path="res://.godot/imported/Free Cow Sprites.png-3b90e1dbf17c71753776be0571fcd7f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://plat.png"
-dest_files=["res://.godot/imported/plat.png-9f35e595baa910282a031a8a93481279.ctex"]
+source_file="res://assets/enemies/Free Cow Sprites.png"
+dest_files=["res://.godot/imported/Free Cow Sprites.png-3b90e1dbf17c71753776be0571fcd7f6.ctex"]
 
 [params]
 
