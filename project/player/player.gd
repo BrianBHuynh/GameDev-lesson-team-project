@@ -77,7 +77,7 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 
 	move_and_slide()
-	
+
 	#Store pose in dictionary
 	
 	save_dictionary["player_pose_x"] = global_position.x

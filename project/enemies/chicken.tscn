@@ -62,6 +62,7 @@ animations = [{
 size = Vector2(9, 3)
 
 [node name="Chicken" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_fcgc8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
