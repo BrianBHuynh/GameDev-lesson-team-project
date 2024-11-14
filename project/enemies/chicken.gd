@@ -58,7 +58,7 @@ func _physics_process(delta: float) -> void:
 		else: 
 			$AnimatedSprite2D.play("run")
 		move_and_slide()
-	
+
 func kill_player():
 	if GlobalVars.player != null and position.distance_to(GlobalVars.player.position) < 20:
 		GlobalVars.player.health = GlobalVars.player.health - 0.1
