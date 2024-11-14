@@ -170,7 +170,7 @@ script = ExtResource("1_1p4bd")
 texture_filter = 1
 position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_0tan8")
-animation = &"idle_down"
+animation = &"walk_down"
 autoplay = "idle_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
