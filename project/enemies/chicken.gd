@@ -42,6 +42,11 @@ func _physics_process(delta: float) -> void:
 		velocity.y = direction.y * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+	
+	if GlobalVars.player.position.x < position.x:
+		$AnimatedSprite2D.flip_h = true
+	else:
+		$AnimatedSprite2D.flip_h = false
 		
 	# Animation for being idle and running depending on distance from player 
 	if distance <= 15:
