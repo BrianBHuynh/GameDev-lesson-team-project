@@ -162,6 +162,7 @@ animations = [{
 size = Vector2(8, 3)
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 1
 motion_mode = 1
 script = ExtResource("1_1p4bd")
 
@@ -169,7 +170,7 @@ script = ExtResource("1_1p4bd")
 texture_filter = 1
 position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_0tan8")
-animation = &"idle_down"
+animation = &"walk_down"
 autoplay = "idle_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
