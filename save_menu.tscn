@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0t6enpiscrg1"]
+
+[ext_resource type="Script" path="res://save_button.gd" id="1_ow64g"]
+
+[node name="EscapeMenu" type="CanvasLayer"]
+
+[node name="SaveButton" type="Button" parent="."]
+offset_left = 8.0
+offset_top = 16.0
+offset_right = 52.0
+offset_bottom = 47.0
+text = "Save"
+script = ExtResource("1_ow64g")
+
+[connection signal="pressed" from="SaveButton" to="SaveButton" method="_on_pressed"]
