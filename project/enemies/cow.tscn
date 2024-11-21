@@ -1,0 +1,75 @@
+[gd_scene load_steps=10 format=3 uid="uid://c7nimjj2ygx3u"]
+
+[ext_resource type="Script" path="res://project/enemies/cow.gd" id="1_1m03n"]
+[ext_resource type="Texture2D" uid="uid://c32pq54mp3f3n" path="res://assets/enemies/Free Cow Sprites.png" id="2_sg7om"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgur2"]
+atlas = ExtResource("2_sg7om")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqmbq"]
+atlas = ExtResource("2_sg7om")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onl57"]
+atlas = ExtResource("2_sg7om")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vcxd"]
+atlas = ExtResource("2_sg7om")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4oi6p"]
+atlas = ExtResource("2_sg7om")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l2bwi"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgur2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqmbq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onl57")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vcxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4oi6p")
+}],
+"loop": true,
+"name": &"move_right",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5snuf"]
+size = Vector2(16, 2)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_1m03n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_l2bwi")
+animation = &"move_right"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 12)
+shape = SubResource("RectangleShape2D_5snuf")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -10.0
+offset_top = -18.0
+offset_right = 92.0
+offset_bottom = 9.0
+scale = Vector2(0.2, 0.2)
+value = 100.0

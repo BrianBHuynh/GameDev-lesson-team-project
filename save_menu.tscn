@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0t6enpiscrg1"]
+[gd_scene load_steps=3 format=3 uid="uid://c0t6enpiscrg1"]
 
 [ext_resource type="Script" path="res://save_button.gd" id="1_ow64g"]
+[ext_resource type="Script" path="res://reset_pose_button.gd" id="2_r72pn"]
 
 [node name="EscapeMenu" type="CanvasLayer"]
 
@@ -12,4 +13,13 @@ offset_bottom = 47.0
 text = "Save"
 script = ExtResource("1_ow64g")
 
+[node name="ResetPoseButton" type="Button" parent="."]
+offset_left = 8.0
+offset_top = 56.0
+offset_right = 100.0
+offset_bottom = 87.0
+text = "Reset Pose"
+script = ExtResource("2_r72pn")
+
 [connection signal="pressed" from="SaveButton" to="SaveButton" method="_on_pressed"]
+[connection signal="pressed" from="ResetPoseButton" to="ResetPoseButton" method="_on_pressed"]
