@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://41dtdkh6bamp"]
+[gd_scene load_steps=17 format=4 uid="uid://41dtdkh6bamp"]
 
 [ext_resource type="PackedScene" uid="uid://j2nuep3bokkk" path="res://project/player/player.tscn" id="1_imogb"]
 [ext_resource type="Texture2D" uid="uid://b4jdxtypdhn4i" path="res://assets/player/Water.png" id="1_navob"]
@@ -738,6 +738,9 @@ position = Vector2(813, 64)
 zoom = Vector2(5, 5)
 script = ExtResource("4_g0kwl")
 
+[node name="CharacterBody2D2" parent="Node2D2" instance=ExtResource("8_3ruyh")]
+position = Vector2(464, 121)
+
 [node name="Player" parent="Node2D2" instance=ExtResource("1_imogb")]
 y_sort_enabled = true
 position = Vector2(815, 67)
@@ -756,6 +759,3 @@ position = Vector2(-815, -61)
 script = ExtResource("3_ju8xa")
 
 [node name="SaveMenu" parent="." instance=ExtResource("4_lmvhy")]
-
-[node name="CharacterBody2D2" parent="." instance=ExtResource("8_3ruyh")]
-position = Vector2(-351, 60)

@@ -61,7 +61,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ywqvv"]
 size = Vector2(9, 3)
 
-[node name="Chicken" type="CharacterBody2D"]
+[node name="Chicken" type="CharacterBody2D" groups=["Enemy"]]
 motion_mode = 1
 script = ExtResource("1_fcgc8")
 

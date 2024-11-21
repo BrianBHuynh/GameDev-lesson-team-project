@@ -106,7 +106,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body != self:
+	if body.is_in_group("Enemy"):
 		print("CHICKEN")
 		inRange.append(body)
 

@@ -50,10 +50,7 @@ func _physics_process(delta: float) -> void:
 			$AnimatedSprite2D.flip_h = false
 			
 		# Animation for being idle and running depending on distance from player 
-		if distance <= 15:
-			$AnimatedSprite2D.play("move_right")
-		else: 
-			$AnimatedSprite2D.play("run")
+		$AnimatedSprite2D.play("move_right")
 		move_and_slide()
 
 func kill_player():
