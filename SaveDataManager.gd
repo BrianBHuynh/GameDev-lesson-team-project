@@ -4,6 +4,7 @@ class_name SaveDataManager
 var save_path_string : String = "user://GameDevLessonTeamProject.save"
 var save_dictionary : Dictionary = {}
 var has_loaded : bool = false
+var save_task_id : int = -1 #It is guarenteed to be positive while performing task.
 
 #Have scripts that want to save/load data call get_save_dictionary() in their "ready" function and then use "save_dictionary[data_name] = data_value" to store values.
 func get_save_dictionary():
@@ -16,8 +17,24 @@ func get_save_dictionary():
 func _ready():
 	load_game()
 	has_loaded = true
-
+	
 func save_game():
+	#Wait if already running
+	if save_task_id != -1:
+		print_debug("Waiting for save...")
+		WorkerThreadPool.wait_for_group_task_completion(save_task_id)
+		print_debug("Done waiting for save.")
+	
+	#Perform save and wait for completion
+	print_debug("Begin multithread-save")
+	save_task_id = WorkerThreadPool.add_task(save_game_process)
+	WorkerThreadPool.wait_for_task_completion(save_task_id)
+	
+	#Completed save; next save can run now
+	save_task_id = -1
+	print_debug("Multithread-save completed!")
+
+func save_game_process():
 	print_debug("Saving...")
 	#Prepare to write!
 	var save_file = FileAccess.open(save_path_string, FileAccess.WRITE)
