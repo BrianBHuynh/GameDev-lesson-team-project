@@ -4,7 +4,7 @@ extends CharacterBody2D
 #Add inputs via the Input manager (project -> project settings -> input manager) for up down left right (WASD, maybe arrow keys and maybe 
 var health = 10
 var maxHealth = 10
-var damage = 20
+var damage = 100
 var attackable = true
 var inRange: Array = []
 const SPEED = 100.0
@@ -21,6 +21,16 @@ func _ready() -> void:
 	print_debug("Loaded player at: " + str(global_position))
 
 func _physics_process(delta: float) -> void:
+	if attackable == true and Input.is_action_pressed("attack"):
+		attackable = false
+		for enemies in inRange:
+			enemies.HEALTH = enemies.HEALTH-damage
+			print("Attacking")
+		print("on cooldown")
+		await get_tree().create_timer(2.0).timeout
+		attackable = true
+		print("off cooldown")
+			
 	if Input.is_action_just_pressed("Up"):
 		latestKey = "Up"
 	if Input.is_action_just_pressed("Down"):
@@ -90,15 +100,9 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	inRange.append(body)
-	
-	if attackable == true and Input.is_action_pressed("attack"):
-		attackable = false
-		await get_tree().create_timer(1.0).timeout
-		for enemies in inRange:
-			enemies.health = enemies.health-damage
-	
-		queue_free()
+	if body != self:
+		print("CHICKEN")
+		inRange.append(body)
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
