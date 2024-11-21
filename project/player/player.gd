@@ -7,7 +7,8 @@ var maxHealth = 10
 var damage = 100
 var attackable = true
 var inRange: Array = []
-const SPEED = 100.0
+var SPEED = 100.0
+var stamina = 100
 const JUMP_VELOCITY = -400.0
 var save_dictionary : Dictionary
 var latestKey
@@ -39,8 +40,13 @@ func _physics_process(delta: float) -> void:
 		latestKey = "Left"
 	if Input.is_action_just_pressed("Right"):
 		latestKey = "Right"
-	
-	
+	if Input.is_action_pressed("Sprint") && stamina >= 10: #min stamina set to 10 so no infinite sprint
+		SPEED = 150.0 #1.5 times the speed of the plc
+		stamina = stamina - 10 #reduce stamina so plc can't sprint infinitely
+	else: #handles release of SHIFT key
+		SPEED = 100.0 #bring speed back to walking pace for plc
+		stamina = stamina + 2 #increase by 2 so there is no infinite sprint capability,
+							  #and so plc has to rest somewhat before they can sprint again
 		
 
 	$ProgressBar.value = health * 100 / maxHealth
