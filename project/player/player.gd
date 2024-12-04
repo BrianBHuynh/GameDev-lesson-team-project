@@ -6,6 +6,7 @@ var health = 10
 var maxHealth = 10
 var SPEED = 100.0
 var stamina = 100
+var stamRest = false
 const JUMP_VELOCITY = -400.0
 var save_dictionary : Dictionary
 var latestKey
@@ -27,16 +28,23 @@ func _physics_process(delta: float) -> void:
 		latestKey = "Left"
 	if Input.is_action_just_pressed("Right"):
 		latestKey = "Right"
-	if Input.is_action_pressed("Sprint") && stamina >= 10: #min stamina set to 10 so no infinite sprint
+	if Input.is_action_pressed("Sprint") && !stamRest: #no infinite sprint
 		SPEED = 150.0 #1.5 times the speed of the plc
-		stamina = stamina - 10 #reduce stamina so plc can't sprint infinitely
+		stamina = stamina - 4 #reduce stamina so plc can't sprint infinitely
 	else: #handles release of SHIFT key
 		SPEED = 100.0 #bring speed back to walking pace for plc
 		stamina = stamina + 2 #increase by 2 so there is no infinite sprint capability,
 							  #and so plc has to rest somewhat before they can sprint again
-		
+	
+	if stamina < 20: #if plc sprints till no stamina left then force plc to only walk or stay still till
+		stamRest = true #stamina is full again
+	if stamina >= 400:
+		stamRest = false #handles case of stamina being full enough again, then allows plc to sprint again
+	
+	
 
 	$ProgressBar.value = health * 100 / maxHealth
+	$StaminaBar.value = stamina
 	
 	if health < 0:
 		queue_free()
