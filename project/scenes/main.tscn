@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://v0vpyki2tey8" path="res://assets/player/Grass.png" id="4_faxjl"]
 [ext_resource type="Script" path="res://project/scenes/camera_2d.gd" id="4_g0kwl"]
 [ext_resource type="PackedScene" uid="uid://c0t6enpiscrg1" path="res://save_menu.tscn" id="4_lmvhy"]
-[ext_resource type="PackedScene" uid="uid://c7nimjj2ygx3u" path="res://project/enemies/cow.tscn" id="8_3ruyh"]
+[ext_resource type="PackedScene" uid="uid://cpfmgmy57wgfd" path="res://project/enemies/cow.tscn" id="8_3ruyh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0wdv6"]
 texture = ExtResource("1_navob")
@@ -739,7 +739,7 @@ zoom = Vector2(5, 5)
 script = ExtResource("4_g0kwl")
 
 [node name="CharacterBody2D2" parent="Node2D2" instance=ExtResource("8_3ruyh")]
-position = Vector2(464, 121)
+position = Vector2(558, 56)
 
 [node name="Player" parent="Node2D2" instance=ExtResource("1_imogb")]
 y_sort_enabled = true
