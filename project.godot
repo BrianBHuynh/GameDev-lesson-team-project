@@ -21,6 +21,12 @@ GlobalVars="*res://project/global_scripts/global_vars.gd"
 SignalBus="*res://project/global_scripts/signal_bus.gd"
 Saves="*res://SaveDataManager.gd"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="viewport"
+
 [input]
 
 Up={
@@ -65,5 +71,6 @@ Sprint={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
