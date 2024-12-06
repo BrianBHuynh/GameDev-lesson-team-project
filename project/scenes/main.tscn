@@ -9,7 +9,8 @@
 [ext_resource type="Script" path="res://project/scenes/camera_2d.gd" id="4_g0kwl"]
 [ext_resource type="PackedScene" uid="uid://c0t6enpiscrg1" path="res://save_menu.tscn" id="4_lmvhy"]
 [ext_resource type="PackedScene" uid="uid://c7nimjj2ygx3u" path="res://project/enemies/cow.tscn" id="8_3ruyh"]
-[ext_resource type="Texture2D" uid="uid://ddb1ug238q0v7" path="res://assets/player/Wood_Bridge.png" id="8_lew50"]
+[ext_resource type="PackedScene" uid="uid://os50w7qfvkvh" path="res://project/teleport_pad.tscn" id="10_ewpa2"]
+[ext_resource type="PackedScene" uid="uid://c4o18y1qrc43q" path="res://project/main_ui.tscn" id="10_hech2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0wdv6"]
 texture = ExtResource("1_navob")
@@ -764,6 +765,17 @@ tile_set = SubResource("TileSet_rxwaf")
 y_sort_enabled = true
 position = Vector2(-815, -61)
 
+[node name="TeleportPadSet" type="Node2D" parent="Node2D2"]
+position = Vector2(815, 61)
+
+[node name="TeleportPadA1" parent="Node2D2/TeleportPadSet" instance=ExtResource("10_ewpa2")]
+position = Vector2(-608, 352)
+target_node_path = NodePath("../TeleportPadA2")
+
+[node name="TeleportPadA2" parent="Node2D2/TeleportPadSet" instance=ExtResource("10_ewpa2")]
+position = Vector2(160, 224)
+target_node_path = NodePath("../TeleportPadA1")
+
 [node name="CharacterBody2D" parent="Node2D2" instance=ExtResource("2_cusj0")]
 position = Vector2(831, 18)
 
@@ -801,5 +813,8 @@ script = ExtResource("3_ju8xa")
 
 [node name="SaveMenu" parent="." instance=ExtResource("4_lmvhy")]
 
+[node name="MainUI" parent="." instance=ExtResource("10_hech2")]
+
 [connection signal="area_entered" from="Node2D2/Area2D" to="Node2D2/Player" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Node2D2/Area2D" to="Node2D2/Player" method="_on_area_2d_area_exited"]
+
