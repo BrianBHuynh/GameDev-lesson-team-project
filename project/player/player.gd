@@ -12,6 +12,11 @@ var stamina = 100
 const JUMP_VELOCITY = -400.0
 var save_dictionary : Dictionary
 var latestKey
+var arrayLeft = []
+var arrayRight = []
+var arrayUp = []
+var arrayDown = []
+
 func _ready() -> void:
 	save_dictionary = await Saves.get_save_dictionary()
 	GlobalVars.player = self
@@ -113,3 +118,35 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	inRange.erase(body)
+
+func on_right(body: Node2D) -> void:
+	print("ON RIGHT")
+	arrayRight.append(body)
+
+func on_left(body: Node2D) -> void:
+	print("ON LEFT")
+	arrayLeft.append(body)
+
+func on_up(body: Node2D) -> void:
+	print("ON UP")
+	arrayUp.append(body)
+
+func on_down(body: Node2D) -> void:
+	print("ON DOWN")
+	arrayDown.append(body)
+
+
+func on_left_exited(body: Node2D) -> void:
+	arrayLeft.erase(body)
+
+
+func on_right_exited(body: Node2D) -> void:
+	arrayRight.erase(body)
+
+
+func on_down_exited(body: Node2D) -> void:
+	arrayDown.erase(body)
+
+
+func on_up_exited(body: Node2D) -> void:
+	arrayUp.erase(body)

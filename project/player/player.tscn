@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://j2nuep3bokkk"]
+[gd_scene load_steps=25 format=3 uid="uid://j2nuep3bokkk"]
 
 [ext_resource type="Script" path="res://project/player/player.gd" id="1_1p4bd"]
 [ext_resource type="Texture2D" uid="uid://c7d4v5qmgbel" path="res://assets/player/Basic Charakter Spritesheet.png" id="2_yjxgs"]
@@ -159,10 +159,19 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q8b26"]
-size = Vector2(8, 3)
+size = Vector2(9, 3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4rdqx"]
-size = Vector2(36, 35)
+size = Vector2(15.5, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2t12"]
+size = Vector2(16, 14.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b4ggj"]
+size = Vector2(19, 13.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ub51w"]
+size = Vector2(20, 14)
 
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
@@ -176,8 +185,9 @@ animation = &"walk_down"
 autoplay = "idle_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
+position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_q8b26")
+debug_color = Color(0.946036, 5.87195e-06, 0.589682, 0.42)
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 offset_left = -13.0
@@ -186,11 +196,38 @@ offset_right = 122.0
 offset_bottom = 9.0
 scale = Vector2(0.2, 0.2)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Attack_left" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(2, -3.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack_left"]
+position = Vector2(17.25, -5.5)
 shape = SubResource("RectangleShape2D_4rdqx")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[node name="Attack_right" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack_right"]
+position = Vector2(-18, -5.25)
+shape = SubResource("RectangleShape2D_i2t12")
+debug_color = Color(0.607616, 0.431151, 0.841461, 0.42)
+
+[node name="Attack_down" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack_down"]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_b4ggj")
+
+[node name="Attack_up" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack_up"]
+position = Vector2(0, -20)
+shape = SubResource("RectangleShape2D_ub51w")
+
+[connection signal="body_entered" from="Attack_left" to="." method="on_left"]
+[connection signal="body_entered" from="Attack_left" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Attack_left" to="." method="on_left_exited"]
+[connection signal="body_exited" from="Attack_left" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Attack_right" to="." method="on_right"]
+[connection signal="body_exited" from="Attack_right" to="." method="on_right_exited"]
+[connection signal="body_entered" from="Attack_down" to="." method="on_down"]
+[connection signal="body_exited" from="Attack_down" to="." method="on_down_exited"]
+[connection signal="body_entered" from="Attack_up" to="." method="on_up"]
+[connection signal="body_exited" from="Attack_up" to="." method="on_up_exited"]
