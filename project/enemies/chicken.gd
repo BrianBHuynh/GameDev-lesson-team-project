@@ -20,7 +20,7 @@ func _physics_process(delta: float) -> void:
 		var direction = position.direction_to(GlobalVars.player.position) 
 		var distance = position.distance_to(GlobalVars.player.position)
 	
-		kill_player()
+		#kill_player()
 		
 		HealthBar.value = (HEALTH * 100) / MAX_HEALTH
 		HealthBar.min_value

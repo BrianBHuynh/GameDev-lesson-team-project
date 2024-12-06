@@ -7,6 +7,7 @@ var MAX_HEALTH = 999
 var HEALTH = 999
 var ATTACK = 5
 var charging = false
+var timer = Timer.new()
 
 @onready var HealthBar = $ProgressBar
 
@@ -19,8 +20,6 @@ func _physics_process(delta: float) -> void:
 		
 		var direction = position.direction_to(GlobalVars.player.position) 
 		var distance = position.distance_to(GlobalVars.player.position)
-	
-		charge(direction)
 		
 		HealthBar.value = (HEALTH * 100) / MAX_HEALTH
 		HealthBar.min_value
@@ -38,28 +37,29 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
 		
-		if direction && distance > 15:
-			velocity.x = direction.x * SPEED
-			velocity.y = direction.y * SPEED
-		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 		if GlobalVars.player.position.x < position.x:
 			$AnimatedSprite2D.flip_h = true
 		else:
 			$AnimatedSprite2D.flip_h = false
-			
-		# Animation for being idle and running depending on distance from player 
-		$AnimatedSprite2D.play("move_right")
-		move_and_slide()
+		
+		if position.distance_to(GlobalVars.player.position) < 50 and not charging:
+			charge()
 
 func kill_player():
 	if GlobalVars.player != null and position.distance_to(GlobalVars.player.position) < 20:
 		GlobalVars.player.health = GlobalVars.player.health - 0.5
 		
-func charge(direction):
+func charge():
 	charging = true
-	if GlobalVars.player != null and position.distance_to(GlobalVars.player.position) < 30:
-		direction = position.direction_to(GlobalVars.player.position)
-		SPEED = 100
-		kill_player()
+	var tween = create_tween()
+	
+	var distance = position.distance_to(GlobalVars.player.position)
+	var direction = position.direction_to(GlobalVars.player.position)
+	
+	var playerx = distance * direction
+	tween.tween_property($AnimatedSprite2D, "position", playerx, 0.5)
+	
+	await get_tree().create_timer(3.0).timeout
+	print("Cow Charging")
+	charging = false

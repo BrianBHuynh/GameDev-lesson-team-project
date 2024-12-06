@@ -773,7 +773,7 @@ zoom = Vector2(5, 5)
 script = ExtResource("4_g0kwl")
 
 [node name="CharacterBody2D2" parent="Node2D2" instance=ExtResource("8_3ruyh")]
-position = Vector2(464, 121)
+position = Vector2(558, 56)
 
 [node name="Player" parent="Node2D2" instance=ExtResource("1_imogb")]
 y_sort_enabled = true
