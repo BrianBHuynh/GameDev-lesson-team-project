@@ -15,7 +15,6 @@ var stamRest = false
 const JUMP_VELOCITY = -400.0
 var save_dictionary : Dictionary
 var latestKey
-@onready var hitbox = $PlayerHitbox
 var arrayLeft = []
 var arrayRight = []
 var arrayUp = []
