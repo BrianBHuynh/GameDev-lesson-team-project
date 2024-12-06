@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v0vpyki2tey8"
-path="res://.godot/imported/Grass.png-6d3c99b02d3553833ad377b8d709c45b.ctex"
+uid="uid://ddb1ug238q0v7"
+path="res://.godot/imported/Wood_Bridge.png-ac51522151c04951bca9fe2cd44cc89a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/Grass.png"
-dest_files=["res://.godot/imported/Grass.png-6d3c99b02d3553833ad377b8d709c45b.ctex"]
+source_file="res://assets/player/Wood_Bridge.png"
+dest_files=["res://.godot/imported/Wood_Bridge.png-ac51522151c04951bca9fe2cd44cc89a.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
