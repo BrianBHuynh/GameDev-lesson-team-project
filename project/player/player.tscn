@@ -196,6 +196,13 @@ offset_right = 122.0
 offset_bottom = 9.0
 scale = Vector2(0.2, 0.2)
 
+[node name="StaminaBar" type="ProgressBar" parent="."]
+offset_left = -7.0
+offset_top = 3.0
+offset_right = 273.0
+offset_bottom = 30.0
+scale = Vector2(0.05, 0.05)
+show_percentage = false
 [node name="Attack_left" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack_left"]
