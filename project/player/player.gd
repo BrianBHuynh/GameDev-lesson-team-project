@@ -119,7 +119,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	inRange.erase(body)
 
-
 func on_right(body: Node2D) -> void:
 	print("ON RIGHT")
 	arrayRight.append(body)
