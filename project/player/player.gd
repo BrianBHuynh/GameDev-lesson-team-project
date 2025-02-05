@@ -48,7 +48,7 @@ func _physics_process(delta: float) -> void:
 		latestKey = "Left"
 	elif Input.is_action_just_pressed("Right"):
 		latestKey = "Right"
-	#Start of the Sprint && Stamina stuff
+#region Sprint, Dodge, and Stamina stuff
 	if Input.is_action_pressed("Sprint") && !stamRest && stamina >= 0: #no infinite sprint
 		SPEED = 150.0 #1.5 times the speed of the plc
 		stamina = stamina - 2 #reduce stamina so plc can't sprint infinitely
@@ -62,9 +62,15 @@ func _physics_process(delta: float) -> void:
 		stamRest = true #stamina is full again
 	elif stamina >= 90:
 		stamRest = false #handles case of stamina being full enough again, then allows plc to sprint again
+		
+	if Input.is_action_just_pressed("Dodge") && !stamRest && stamina > 30:
+		SPEED = 300
+		stamina = stamina - 30
+	else:
+		SPEED = 100
 	
 	$StaminaBar.value = stamina
-	#End of the Sprint && Stamina stuff
+#endregion
 
 	$ProgressBar.value = health * 100 / maxHealth
 	
