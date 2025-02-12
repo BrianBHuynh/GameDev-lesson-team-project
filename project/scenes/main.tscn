@@ -11,11 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://cfmdbn1bqwfs1" path="res://assets/objects/TeleportPadScene.png" id="4_25gw3"]
 [ext_resource type="Texture2D" uid="uid://v0vpyki2tey8" path="res://assets/player/Grass.png" id="4_faxjl"]
 [ext_resource type="PackedScene" uid="uid://c0t6enpiscrg1" path="res://save_menu.tscn" id="4_lmvhy"]
-[ext_resource type="PackedScene" uid="uid://cdnt1akkbo67s" path="res://scenes/main_camera.tscn" id="5_sjcw5"]
-[ext_resource type="PackedScene" uid="uid://c7nimjj2ygx3u" path="res://project/enemies/cow.tscn" id="8_3ruyh"]
-[ext_resource type="PackedScene" uid="uid://os50w7qfvkvh" path="res://project/teleport_pad.tscn" id="10_ewpa2"]
-[ext_resource type="PackedScene" uid="uid://c4o18y1qrc43q" path="res://project/main_ui.tscn" id="10_hech2"]
-
+[ext_resource type="PackedScene" uid="uid://cpfmgmy57wgfd" path="res://project/enemies/cow.tscn" id="8_3ruyh"]
+[ext_resource type="Texture2D" uid="uid://ddb1ug238q0v7" path="res://assets/player/Wood_Bridge.png" id="8_lew50"]
+[ext_resource type="Script" path="res://project/scenes/timer.gd" id="11_jk2o2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0wdv6"]
 texture = ExtResource("1_navob")
@@ -770,44 +768,13 @@ tile_set = SubResource("TileSet_rxwaf")
 y_sort_enabled = true
 position = Vector2(-815, -61)
 
-[node name="SceneTeleporter" parent="Node2D2" instance=ExtResource("3_e4odc")]
-position = Vector2(727, 53)
-new_scene = "res://project/scenes/test_map_2.tscn"
 
-[node name="TeleportPadScene" parent="Node2D2/SceneTeleporter" index="2"]
-texture = ExtResource("4_25gw3")
-
-[node name="PlayerCollideArea" parent="Node2D2/SceneTeleporter" index="3"]
-enter_active = true
-
-[node name="TeleportPadSet" type="Node2D" parent="Node2D2"]
-position = Vector2(815, 61)
-
-[node name="TeleportPadA1" parent="Node2D2/TeleportPadSet" instance=ExtResource("10_ewpa2")]
-position = Vector2(-608, 352)
-target_node_path = NodePath("../TeleportPadA2")
-
-[node name="TeleportPadA2" parent="Node2D2/TeleportPadSet" instance=ExtResource("10_ewpa2")]
-position = Vector2(160, 224)
-target_node_path = NodePath("../TeleportPadA1")
-
-[node name="TeleportPadSet2" type="Node2D" parent="Node2D2"]
-position = Vector2(815, 61)
-
-[node name="TeleportPadB" parent="Node2D2/TeleportPadSet2" instance=ExtResource("10_ewpa2")]
-position = Vector2(-296, 16)
-target_node_path = NodePath("../Positioner")
-
-[node name="Positioner" type="Node2D" parent="Node2D2/TeleportPadSet2"]
-position = Vector2(-224, -88)
-
-
-[node name="CharacterBody2D" parent="Node2D2" instance=ExtResource("2_cusj0")]
+[node name="Chicken" parent="Node2D2" instance=ExtResource("2_cusj0")]
 position = Vector2(831, 18)
 
 [node name="MainCamera" parent="Node2D2" instance=ExtResource("5_sjcw5")]
 
-[node name="CharacterBody2D2" parent="Node2D2" instance=ExtResource("8_3ruyh")]
+[node name="Cow" parent="Node2D2" instance=ExtResource("8_3ruyh")]
 position = Vector2(558, 56)
 
 [node name="Player" parent="Node2D2" instance=ExtResource("1_imogb")]
@@ -836,7 +803,8 @@ script = ExtResource("3_ju8xa")
 
 [node name="SaveMenu" parent="." instance=ExtResource("4_lmvhy")]
 
-[node name="MainUI" parent="." instance=ExtResource("10_hech2")]
+[node name="Timer" type="Timer" parent="."]
+script = ExtResource("11_jk2o2")
 
-[editable path="Node2D2/SceneTeleporter"]
-
+[connection signal="area_entered" from="Node2D2/Area2D" to="Node2D2/Player" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Node2D2/Area2D" to="Node2D2/Player" method="_on_area_2d_area_exited"]

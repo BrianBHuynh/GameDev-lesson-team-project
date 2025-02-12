@@ -1,15 +1,10 @@
-extends CharacterBody2D
+extends Enemy
+class_name Cow
 
 # Make this similar to the Chicken, but instead, have it charge at the player.
-var SPEED = 50
-const JUMP_VELOCITY = 5
-var MAX_HEALTH = 999
-var HEALTH = 999
-var ATTACK = 5
+
 var charging = false
 var timer = Timer.new()
-
-@onready var HealthBar = $ProgressBar
 
 func death():
 	self.free()
