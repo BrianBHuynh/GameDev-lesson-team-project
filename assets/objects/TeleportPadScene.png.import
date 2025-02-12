@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqbihfikkngrv"
-path="res://.godot/imported/TeleportPad.png-5498b280da8e4b9353f67deb5f49f156.ctex"
+uid="uid://cfmdbn1bqwfs1"
+path="res://.godot/imported/TeleportPadScene.png-34d6eee82ceeceef57fc6b025dff5fd0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TeleportPad.png"
-dest_files=["res://.godot/imported/TeleportPad.png-5498b280da8e4b9353f67deb5f49f156.ctex"]
+source_file="res://assets/objects/TeleportPadScene.png"
+dest_files=["res://.godot/imported/TeleportPadScene.png-34d6eee82ceeceef57fc6b025dff5fd0.ctex"]
 
 [params]
 
