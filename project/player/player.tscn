@@ -231,8 +231,8 @@ shape = SubResource("RectangleShape2D_ub51w")
 
 [connection signal="body_entered" from="Attack_left" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Attack_left" to="." method="on_left"]
-[connection signal="body_exited" from="Attack_left" to="." method="on_left_exited"]
 [connection signal="body_exited" from="Attack_left" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="Attack_left" to="." method="on_left_exited"]
 [connection signal="body_entered" from="Attack_right" to="." method="on_right"]
 [connection signal="body_exited" from="Attack_right" to="." method="on_right_exited"]
 [connection signal="body_entered" from="Attack_down" to="." method="on_down"]

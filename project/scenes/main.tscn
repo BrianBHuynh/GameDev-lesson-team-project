@@ -1,15 +1,12 @@
-
 [gd_scene load_steps=21 format=4 uid="uid://41dtdkh6bamp"]
-
 
 [ext_resource type="PackedScene" uid="uid://j2nuep3bokkk" path="res://project/player/player.tscn" id="1_imogb"]
 [ext_resource type="Texture2D" uid="uid://b4jdxtypdhn4i" path="res://assets/player/Water.png" id="1_navob"]
 [ext_resource type="PackedScene" uid="uid://0w2eynvcvskl" path="res://project/enemies/chicken.tscn" id="2_cusj0"]
-[ext_resource type="PackedScene" uid="uid://dciipfv6c2j4d" path="res://scenes/scene_teleporter.tscn" id="3_e4odc"]
 [ext_resource type="Script" path="res://SaveDataManager.gd" id="3_ju8xa"]
 [ext_resource type="Texture2D" uid="uid://dbpyt66w722g3" path="res://assets/player/Basic_Grass_Biom_things.png" id="3_mask3"]
-[ext_resource type="Texture2D" uid="uid://cfmdbn1bqwfs1" path="res://assets/objects/TeleportPadScene.png" id="4_25gw3"]
 [ext_resource type="Texture2D" uid="uid://v0vpyki2tey8" path="res://assets/player/Grass.png" id="4_faxjl"]
+[ext_resource type="Script" path="res://project/scenes/camera_2d.gd" id="4_g0kwl"]
 [ext_resource type="PackedScene" uid="uid://c0t6enpiscrg1" path="res://save_menu.tscn" id="4_lmvhy"]
 [ext_resource type="PackedScene" uid="uid://cpfmgmy57wgfd" path="res://project/enemies/cow.tscn" id="8_3ruyh"]
 [ext_resource type="Texture2D" uid="uid://ddb1ug238q0v7" path="res://assets/player/Wood_Bridge.png" id="8_lew50"]
@@ -752,7 +749,7 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_skyas")
 sources/2 = SubResource("TileSetAtlasSource_dr14n")
 
-[node name="Map" type="Node2D"]
+[node name="Main" type="Node2D"]
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 position = Vector2(-742, -76)
@@ -768,11 +765,13 @@ tile_set = SubResource("TileSet_rxwaf")
 y_sort_enabled = true
 position = Vector2(-815, -61)
 
-
 [node name="Chicken" parent="Node2D2" instance=ExtResource("2_cusj0")]
 position = Vector2(831, 18)
 
-[node name="MainCamera" parent="Node2D2" instance=ExtResource("5_sjcw5")]
+[node name="Camera2D" type="Camera2D" parent="Node2D2"]
+position = Vector2(813, 64)
+zoom = Vector2(5, 5)
+script = ExtResource("4_g0kwl")
 
 [node name="Cow" parent="Node2D2" instance=ExtResource("8_3ruyh")]
 position = Vector2(558, 56)
