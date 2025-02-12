@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://41dtdkh6bamp"]
+[gd_scene load_steps=21 format=4 uid="uid://41dtdkh6bamp"]
 
 [ext_resource type="PackedScene" uid="uid://j2nuep3bokkk" path="res://project/player/player.tscn" id="1_imogb"]
 [ext_resource type="Texture2D" uid="uid://b4jdxtypdhn4i" path="res://assets/player/Water.png" id="1_navob"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c0t6enpiscrg1" path="res://save_menu.tscn" id="4_lmvhy"]
 [ext_resource type="PackedScene" uid="uid://cpfmgmy57wgfd" path="res://project/enemies/cow.tscn" id="8_3ruyh"]
 [ext_resource type="Texture2D" uid="uid://ddb1ug238q0v7" path="res://assets/player/Wood_Bridge.png" id="8_lew50"]
+[ext_resource type="Script" path="res://project/scenes/timer.gd" id="11_jk2o2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0wdv6"]
 texture = ExtResource("1_navob")
@@ -764,7 +765,7 @@ tile_set = SubResource("TileSet_rxwaf")
 y_sort_enabled = true
 position = Vector2(-815, -61)
 
-[node name="CharacterBody2D" parent="Node2D2" instance=ExtResource("2_cusj0")]
+[node name="Chicken" parent="Node2D2" instance=ExtResource("2_cusj0")]
 position = Vector2(831, 18)
 
 [node name="Camera2D" type="Camera2D" parent="Node2D2"]
@@ -772,7 +773,7 @@ position = Vector2(813, 64)
 zoom = Vector2(5, 5)
 script = ExtResource("4_g0kwl")
 
-[node name="CharacterBody2D2" parent="Node2D2" instance=ExtResource("8_3ruyh")]
+[node name="Cow" parent="Node2D2" instance=ExtResource("8_3ruyh")]
 position = Vector2(558, 56)
 
 [node name="Player" parent="Node2D2" instance=ExtResource("1_imogb")]
@@ -800,6 +801,9 @@ position = Vector2(-815, -61)
 script = ExtResource("3_ju8xa")
 
 [node name="SaveMenu" parent="." instance=ExtResource("4_lmvhy")]
+
+[node name="Timer" type="Timer" parent="."]
+script = ExtResource("11_jk2o2")
 
 [connection signal="area_entered" from="Node2D2/Area2D" to="Node2D2/Player" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Node2D2/Area2D" to="Node2D2/Player" method="_on_area_2d_area_exited"]
