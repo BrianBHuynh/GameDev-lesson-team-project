@@ -12,6 +12,8 @@ var inRange: Array = []
 var SPEED = 100.0
 var stamina = 100.0
 var stamRest = false
+var rf = -1
+var max_rf = 20
 const JUMP_VELOCITY = -400.0
 var save_dictionary : Dictionary
 var latestKey
@@ -62,13 +64,25 @@ func _physics_process(delta: float) -> void:
 		stamRest = true #stamina is full again
 	elif stamina >= 90:
 		stamRest = false #handles case of stamina being full enough again, then allows plc to sprint again
-		
-	if Input.is_action_just_pressed("Dodge") && !stamRest && stamina > 30:
-		SPEED = 300
-		stamina = stamina - 30
+
+	if Input.is_action_just_pressed("Dodge") && !stamRest && stamina > 30 && rf == -1 && !Input.is_action_pressed("Sprint"):
+		rf = 0
 	else:
 		SPEED = 100
 	
+	if rf > -1 && rf < max_rf && !stamRest && stamina > 30:
+		rf += 1
+		if(velocity.x < 0):
+			$AnimatedSprite2D.rotate(-0.5)
+		elif(velocity.x > 0):
+			$AnimatedSprite2D.rotate(0.5)
+		##elif(velocity.y > 0): Make the scale change for going down/up to make a roll
+			##$AnimatedSprite2D.scale()
+		SPEED = 300
+		stamina = stamina - 2
+	elif rf >= max_rf:
+		rf = -1
+		$AnimatedSprite2D.rotation = 0
 	$StaminaBar.value = stamina
 #endregion
 
