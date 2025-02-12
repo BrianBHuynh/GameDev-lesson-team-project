@@ -1,7 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://j2nuep3bokkk"]
+[gd_scene load_steps=26 format=3 uid="uid://j2nuep3bokkk"]
 
 [ext_resource type="Script" path="res://project/player/player.gd" id="1_1p4bd"]
 [ext_resource type="Texture2D" uid="uid://c7d4v5qmgbel" path="res://assets/player/Basic Charakter Spritesheet.png" id="2_yjxgs"]
+[ext_resource type="PackedScene" uid="uid://cfrbd0rsow3vu" path="res://project/guns/shotgun.tscn" id="3_r42he"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3w37p"]
 atlas = ExtResource("2_yjxgs")
@@ -228,6 +229,11 @@ shape = SubResource("RectangleShape2D_b4ggj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack_up"]
 position = Vector2(0, -20)
 shape = SubResource("RectangleShape2D_ub51w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Shotgun" parent="." instance=ExtResource("3_r42he")]
+position = Vector2(2, -2)
 
 [connection signal="body_entered" from="Attack_left" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Attack_left" to="." method="on_left"]
