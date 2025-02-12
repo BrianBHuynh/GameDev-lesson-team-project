@@ -1,7 +1,7 @@
 extends CanvasLayer
 class_name MainUI
 
-@onready var flash = $ScreenFlash
+@onready var flash : TextureRect = $ScreenFlash
 
 signal screen_flash_finished
 
