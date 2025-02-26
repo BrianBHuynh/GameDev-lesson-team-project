@@ -7,6 +7,8 @@ const JUMP_VELOCITY = 5
 var MAX_HEALTH = 999
 var HEALTH = 999
 var ATTACK = 5
+var KILL_COOLDOWN = 10
+var kill_t : int = 0
 signal enemy_defeated
 @onready var HealthBar = $ProgressBar
 
@@ -21,6 +23,8 @@ func _physics_process(delta: float) -> void:
 		var distance = position.distance_to(GlobalVars.player.position)
 	
 		#kill_player()
+		
+		#Damage with cooldown
 		
 		HealthBar.value = (HEALTH * 100) / MAX_HEALTH
 		HealthBar.min_value
