@@ -6,6 +6,8 @@ const JUMP_VELOCITY = 5
 var MAX_HEALTH = 999
 var HEALTH = 999
 var ATTACK = 5
+var KILL_COOLDOWN = 10
+var KILL_T : int = 0
 
 var level = 1 #Default level is 1
 
