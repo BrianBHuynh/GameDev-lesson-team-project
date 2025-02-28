@@ -7,8 +7,6 @@ const JUMP_VELOCITY = 5
 var MAX_HEALTH = 999
 var HEALTH = 999
 var ATTACK = 5
-var KILL_COOLDOWN = 10
-var kill_t : int = 0
 signal enemy_defeated
 @onready var HealthBar = $ProgressBar
 
