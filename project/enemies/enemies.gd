@@ -24,8 +24,6 @@ func _physics_process(delta: float) -> void:
 	
 		#kill_player()
 		
-		#Damage with cooldown
-		
 		HealthBar.value = (HEALTH * 100) / MAX_HEALTH
 		HealthBar.min_value
 		# Add the gravity.
