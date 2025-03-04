@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://j2nuep3bokkk" path="res://project/player/player.tscn" id="1_4itqy"]
 [ext_resource type="PackedScene" uid="uid://cdnt1akkbo67s" path="res://scenes/main_camera.tscn" id="2_vsavf"]
-[ext_resource type="Script" path="res://SaveDataManager.gd" id="3_63bik"]
+[ext_resource type="Script" uid="uid://32rcxcud512o" path="res://SaveDataManager.gd" id="3_63bik"]
 [ext_resource type="PackedScene" uid="uid://c0t6enpiscrg1" path="res://save_menu.tscn" id="4_dqoxn"]
 [ext_resource type="PackedScene" uid="uid://c4o18y1qrc43q" path="res://project/main_ui.tscn" id="5_y2sf6"]
-[ext_resource type="Script" path="res://scripts/EnemyCounterScript.gd" id="6_aigep"]
+[ext_resource type="Script" uid="uid://cobw82e22wmao" path="res://scripts/EnemyCounterScript.gd" id="6_aigep"]
 [ext_resource type="PackedScene" uid="uid://dciipfv6c2j4d" path="res://scenes/scene_teleporter.tscn" id="7_e7lby"]
 [ext_resource type="Texture2D" uid="uid://v0vpyki2tey8" path="res://assets/player/Grass.png" id="8_m5qth"]
 [ext_resource type="PackedScene" uid="uid://0w2eynvcvskl" path="res://project/enemies/chicken.tscn" id="8_smlta"]

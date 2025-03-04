@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://kfq37pv6eqi2"]
 
-[ext_resource type="Script" path="res://individual student folders/beau/beau.gd" id="1_7wr0n"]
+[ext_resource type="Script" uid="uid://covn8b5lr8r8e" path="res://individual student folders/beau/beau.gd" id="1_7wr0n"]
 [ext_resource type="Texture2D" uid="uid://8mn44mrwwa2m" path="res://icon.svg" id="2_2ig6d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4lth3"]
