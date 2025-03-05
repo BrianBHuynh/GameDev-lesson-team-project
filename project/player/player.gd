@@ -70,6 +70,11 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("Dodge") && !stamRest && stamina > 30 && rf == -1 && !Input.is_action_pressed("Sprint"):
 		rf = 0
 		stamina = 30
+		
+	if($AnimatedSprite2D.scale.y == 1):
+		dodgeUD = 0
+	elif($AnimatedSprite2D.scale.y == -1):
+		dodgeUD = 1
 	
 	if rf > -1 && rf < max_rf && !stamRest && stamina > 30:
 		rf += 1
@@ -77,15 +82,8 @@ func _physics_process(delta: float) -> void:
 			$AnimatedSprite2D.rotate(-0.5)
 		elif(velocity.x > 0):
 			$AnimatedSprite2D.rotate(0.5)
-		elif(velocity.y > 0):
-			#if($AnimatedSprite2D.scale.y == 1 && dodgeUD == 0):
-				#dodgeUD = 1
-			#if($AnimatedSprite2D.scale.y == -1 && dodgeUD == 1):
-				#dodgeUD = -1
-			if($AnimatedSprite2D.scale.y >= -1):
-				$AnimatedSprite2D.scale.y -= 0.2
-			#elif($AnimatedSprite2D.scale.y <= 1 && dodgeUD == -1):
-				#$AnimatedSprite2D.scale.y += 0.2
+		elif(velocity.y > 0 || velocity.y < 0):
+			$AnimatedSprite2D.scale.y = cos(rf * 0.5)
 		SPEED = 300
 	elif rf >= max_rf:
 		rf = -1
