@@ -14,7 +14,6 @@ var stamina = 100.0
 var stamRest = false
 var rf = -1
 var max_rf = 20
-var dodgeUD = 0
 const JUMP_VELOCITY = -400.0
 var save_dictionary : Dictionary
 var latestKey
@@ -70,11 +69,6 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("Dodge") && !stamRest && stamina > 30 && rf == -1 && !Input.is_action_pressed("Sprint"):
 		rf = 0
 		stamina = 30
-		
-	if($AnimatedSprite2D.scale.y == 1):
-		dodgeUD = 0
-	elif($AnimatedSprite2D.scale.y == -1):
-		dodgeUD = 1
 	
 	if rf > -1 && rf < max_rf && !stamRest && stamina > 30:
 		rf += 1
