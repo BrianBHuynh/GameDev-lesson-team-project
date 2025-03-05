@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c0t6enpiscrg1"]
 
-[ext_resource type="Script" path="res://save_button.gd" id="1_ow64g"]
-[ext_resource type="Script" path="res://reset_pose_button.gd" id="2_r72pn"]
+[ext_resource type="Script" uid="uid://bancf7vcaa2up" path="res://save_button.gd" id="1_ow64g"]
+[ext_resource type="Script" uid="uid://2chxbvfp2miq" path="res://reset_pose_button.gd" id="2_r72pn"]
 
 [node name="EscapeMenu" type="CanvasLayer"]
 

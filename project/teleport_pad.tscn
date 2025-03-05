@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://os50w7qfvkvh"]
 
-[ext_resource type="Script" path="res://teleport_player.gd" id="1_kp6od"]
+[ext_resource type="Script" uid="uid://cd10ccbijqcr" path="res://teleport_player.gd" id="1_kp6od"]
 [ext_resource type="PackedScene" uid="uid://cca6ikec3gmmm" path="res://player_collide_area.tscn" id="2_3hcyh"]
 [ext_resource type="Texture2D" uid="uid://dqbihfikkngrv" path="res://assets/objects/TeleportPad.png" id="2_nxk4i"]
 

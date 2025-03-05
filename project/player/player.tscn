@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://j2nuep3bokkk"]
 
-[ext_resource type="Script" path="res://project/player/player.gd" id="1_1p4bd"]
+[ext_resource type="Script" uid="uid://mcumi4iyr1fr" path="res://project/player/player.gd" id="1_1p4bd"]
 [ext_resource type="Texture2D" uid="uid://c7d4v5qmgbel" path="res://assets/player/Basic Charakter Spritesheet.png" id="2_yjxgs"]
 [ext_resource type="PackedScene" uid="uid://cfrbd0rsow3vu" path="res://project/guns/shotgun.tscn" id="3_r42he"]
 
