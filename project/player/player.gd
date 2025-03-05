@@ -51,6 +51,7 @@ func _physics_process(delta: float) -> void:
 	elif Input.is_action_just_pressed("Right"):
 		latestKey = "Right"
 #region Sprint, Dodge, and Stamina stuff
+
 	if Input.is_action_pressed("Sprint") && !stamRest && stamina >= 0: #no infinite sprint
 		SPEED = 150.0 #1.5 times the speed of the plc
 		stamina = stamina - 2 #reduce stamina so plc can't sprint infinitely
@@ -67,8 +68,7 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("Dodge") && !stamRest && stamina > 30 && rf == -1 && !Input.is_action_pressed("Sprint"):
 		rf = 0
-	else:
-		SPEED = 100
+		stamina = 30
 	
 	if rf > -1 && rf < max_rf && !stamRest && stamina > 30:
 		rf += 1
@@ -76,13 +76,14 @@ func _physics_process(delta: float) -> void:
 			$AnimatedSprite2D.rotate(-0.5)
 		elif(velocity.x > 0):
 			$AnimatedSprite2D.rotate(0.5)
-		##elif(velocity.y > 0): Make the scale change for going down/up to make a roll
-			##$AnimatedSprite2D.scale()
+		elif(velocity.y > 0 || velocity.y < 0):
+			$AnimatedSprite2D.scale.y = cos(rf * 0.5)
 		SPEED = 300
-		stamina = stamina - 2
 	elif rf >= max_rf:
 		rf = -1
 		$AnimatedSprite2D.rotation = 0
+		$AnimatedSprite2D.scale.y = 1
+		SPEED = 100
 	$StaminaBar.value = stamina
 #endregion
 
