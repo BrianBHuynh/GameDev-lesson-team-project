@@ -27,8 +27,8 @@ func _ready() -> void:
 	GlobalVars.player = self
 	
 	#Setup
-	global_position.x = save_dictionary.get_or_add("player_pose_x", 0)
-	global_position.y = save_dictionary.get_or_add("player_pose_y", 0)
+	#global_position.x = save_dictionary.get_or_add("player_pose_x", 0)
+	#global_position.y = save_dictionary.get_or_add("player_pose_y", 0)
 	print_debug("Loaded player at: " + str(global_position))
 
 func _physics_process(delta: float) -> void:

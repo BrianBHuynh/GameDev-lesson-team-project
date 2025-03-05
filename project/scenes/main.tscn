@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://ddb1ug238q0v7" path="res://assets/player/Wood_Bridge.png" id="8_lew50"]
 [ext_resource type="Script" uid="uid://nmhese8y8qdx" path="res://project/scenes/timer.gd" id="11_jk2o2"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0wdv6"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wkd0f"]
 texture = ExtResource("1_navob")
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -63,7 +63,7 @@ texture = ExtResource("1_navob")
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Water"
 terrain_set_0/terrain_0/color = Color(0.236712, 0.385966, 0.605136, 1)
-sources/0 = SubResource("TileSetAtlasSource_0wdv6")
+sources/0 = SubResource("TileSetAtlasSource_wkd0f")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gi03f"]
 texture = ExtResource("4_faxjl")
@@ -690,7 +690,7 @@ sources/1 = SubResource("TileSetAtlasSource_gu77m")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y2mb3"]
 size = Vector2(20, 98)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_skyas"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jg3yv"]
 texture = ExtResource("3_mask3")
 0:0/0 = 0
 0:0/0/y_sort_origin = 15
@@ -756,7 +756,7 @@ texture = ExtResource("3_mask3")
 7:4/0 = 0
 8:4/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dr14n"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u2rp5"]
 texture = ExtResource("8_lew50")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.875, -6.375, -6.875, 8, -8, 8, -8, -1.75, -8, -6.5)
@@ -789,8 +789,8 @@ physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
-sources/0 = SubResource("TileSetAtlasSource_skyas")
-sources/2 = SubResource("TileSetAtlasSource_dr14n")
+sources/0 = SubResource("TileSetAtlasSource_jg3yv")
+sources/2 = SubResource("TileSetAtlasSource_u2rp5")
 
 [node name="Main" type="Node2D"]
 
