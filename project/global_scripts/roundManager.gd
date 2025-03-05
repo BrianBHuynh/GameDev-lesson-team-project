@@ -7,6 +7,7 @@ var current_wave = 1
 var starting_nodes: int 
 var current_nodes: int
 var wave_spawn_ended
+var spawnerList: Array = []
 
 
 func _ready() -> void: 

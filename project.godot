@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 GlobalVars="*res://project/global_scripts/global_vars.gd"
 SignalBus="*res://project/global_scripts/signal_bus.gd"
 Saves="*res://SaveDataManager.gd"
+RoundManager="*res://project/global_scripts/roundManager.gd"
 
 [display]
 
