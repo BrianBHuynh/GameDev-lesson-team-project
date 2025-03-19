@@ -11,8 +11,8 @@ func _physics_process(delta: float) -> void:
 func chicken_movement():
 	# Stops game from crashing bc the player is not dead
 	if GlobalVars.player != null:
-		var direction = position.direction_to(GlobalVars.player.position) 
-		var distance = position.distance_to(GlobalVars.player.position)
+		var direction = global_position.direction_to(GlobalVars.player.global_position) 
+		var distance = global_position.distance_to(GlobalVars.player.global_position)
 	
 		kill_player()
 		
@@ -26,8 +26,8 @@ func chicken_movement():
 			death()
 		
 		# Ayo - what is this?
-		if direction && SPEED == 0: 
-			GlobalVars.player.heatlh = ATTACK - GlobalVars.player.health
+		if distance < 15: 
+			GlobalVars.player.health = GlobalVars.player.health - ATTACK
 		
 		# Handle jump.
 		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
