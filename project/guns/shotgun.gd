@@ -14,7 +14,7 @@ func _process(delta):
 
 func shoot():
 	# Create a new instance of the Mob scene.
-	var mob: CharacterBody2D = load("res://project/bullets/bullet.tscn").instantiate()
+	var mob: Node2D = load("res://project/bullets/bullet.tscn").instantiate()
 	get_tree().root.add_child(mob)
 	mob.global_position = $muzzle.global_position
 	mob.global_rotation = self.global_position.angle_to_point(get_global_mouse_position())

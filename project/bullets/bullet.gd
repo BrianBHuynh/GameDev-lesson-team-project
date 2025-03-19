@@ -1,13 +1,12 @@
-extends CharacterBody2D
+extends Node2D
 
-
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-
+var velocity : Vector2
+const PHYSICS_FRAMES_PER_SECOND : int = 60
 
 func _physics_process(delta: float) -> void:
-	move_and_slide()
+	global_position += velocity / PHYSICS_FRAMES_PER_SECOND
 
-func _on_area_2d_body_entered(body: Enemy) -> void:
+func _on_bullet_area_body_entered(body):
+	if body is Enemy:
 		body.HEALTH = body.HEALTH - 50
 		queue_free()
