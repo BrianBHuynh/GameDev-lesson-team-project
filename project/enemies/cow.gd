@@ -6,11 +6,10 @@ class_name Cow
 var charging = false
 var timer = Timer.new()
 
-func death():
-	self.free()
-
 func _physics_process(delta: float) -> void:
 	# Stops game from crashing bc the player is not dead
+	if GlobalVars.player.global_position.distance_to(global_position) < 20:
+		death()
 	cow_movement()
 		
 func charge():
