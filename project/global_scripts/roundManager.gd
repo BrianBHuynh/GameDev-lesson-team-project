@@ -5,6 +5,7 @@ var current_wave = 1
 @export var cow_scene: PackedScene
 
 var starting_nodes: int 
+var enemies: Array = []
 var current_nodes: int
 var wave_spawn_ended
 var spawnerList: Array = []
@@ -20,14 +21,16 @@ func _ready() -> void:
 	
 	pass
 
+func _process(delta: float) -> void:
+	if(enemies.is_empty()):
+		print("Round Over")
+		position_to_next_wave()
+
 func position_to_next_wave():
 	if current_nodes == starting_nodes:
-		if(current_wave != 0):
-			GlobalVars.moving_to_next_wave = true
 		current_wave += 1
-		GlobalVars.current_wave = current_wave
-		print(current_wave)
-pass
+		for spawner in spawnerList:
+			spawner.spawn_enemies()
 
 func currentRound() -> void: 
 	
