@@ -8,7 +8,7 @@ var timer = Timer.new()
 
 func _physics_process(delta: float) -> void:
 	# Stops game from crashing bc the player is not dead
-	if GlobalVars.player.global_position.distance_to(global_position) < 20:
+	if GlobalVars.player != null and GlobalVars.player.global_position.distance_to(global_position) < 20:
 		death()
 	cow_movement()
 
