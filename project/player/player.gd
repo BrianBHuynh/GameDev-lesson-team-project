@@ -25,6 +25,8 @@ var arrayDown = []
 func _ready() -> void:
 	save_dictionary = await Saves.get_save_dictionary()
 	GlobalVars.player = self
+	print(health)
+	print(GlobalVars.player.health)
 	
 	#Setup
 	#global_position.x = save_dictionary.get_or_add("player_pose_x", 0)

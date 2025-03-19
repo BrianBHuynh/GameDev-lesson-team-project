@@ -5,7 +5,7 @@ const SPEED = 50
 const JUMP_VELOCITY = 5
 var MAX_HEALTH = 999
 var HEALTH = 999
-var ATTACK = 5
+var ATTACK = 1
 var KILL_COOLDOWN = 10
 var KILL_T : int = 0
 
