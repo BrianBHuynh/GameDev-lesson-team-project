@@ -7,9 +7,6 @@ var charging = false
 var timer = Timer.new()
 
 func _physics_process(delta: float) -> void:
-	# Stops game from crashing bc the player is not dead
-	if GlobalVars.player != null and GlobalVars.player.global_position.distance_to(global_position) < 20:
-		death()
 	cow_movement()
 
 func charge():
@@ -19,8 +16,8 @@ func charge():
 	var distance = global_position.distance_to(GlobalVars.player.global_position)
 	var direction = global_position.direction_to(GlobalVars.player.global_position)
 	
-	var playerx = distance * direction
-	tween.tween_property($AnimatedSprite2D, "position", playerx, 0.5)
+	var playerx = distance * direction + GlobalVars.player.global_position
+	tween.tween_property(self, "position", playerx, 0.5)
 	
 	await get_tree().create_timer(3.0).timeout
 	print("Cow Charging")
@@ -44,5 +41,7 @@ func cow_movement():
 			death()
 		
 		# Ayo - what is this?
-		if distance < 15: 
+		if charging == false and distance < 50:
+				charge()
+		if distance < 15:
 			GlobalVars.player.health = GlobalVars.player.health - ATTACK

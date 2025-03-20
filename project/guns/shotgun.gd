@@ -8,7 +8,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta):
 	look_at(get_global_mouse_position())
 	if(delay < 30):
 		delay = delay + 1
@@ -28,7 +28,6 @@ func process_attacking_delay():
 		shootable = false
 		shoot()
 	else:
-		print(delay)
-		if delay == 30:
+		if delay >= 2:
 			delay = 0
 			shootable = true

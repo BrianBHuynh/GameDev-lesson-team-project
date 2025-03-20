@@ -8,5 +8,5 @@ func _physics_process(delta: float) -> void:
 
 func _on_bullet_area_body_entered(body):
 	if body is Enemy:
-		body.HEALTH = body.HEALTH - 50
+		body.HEALTH = body.HEALTH - 25
 		queue_free()
