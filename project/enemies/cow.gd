@@ -37,7 +37,7 @@ func cow_movement():
 		if not is_on_floor():
 			pass
 		# Death o maidenless
-		if HEALTH < 0: 
+		if HEALTH <= 0: 
 			death()
 		
 		# Ayo - what is this?

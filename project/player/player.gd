@@ -91,7 +91,7 @@ func _physics_process(delta: float) -> void:
 
 	$ProgressBar.value = health * 100 / maxHealth
 	
-	if health < 0:
+	if health <= 0:
 		queue_free()
 		health = health - 1
 	# Handle jump.
