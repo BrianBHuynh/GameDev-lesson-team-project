@@ -22,7 +22,7 @@ func _ready() -> void:
 	pass
 
 func _process(delta: float) -> void:
-	if(enemies.is_empty()):
+	if(enemies.is_empty() && spawnerList.size() > 0):
 		print("Round Over")
 		position_to_next_wave()
 
