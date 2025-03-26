@@ -1,8 +1,9 @@
-[gd_scene load_steps=26 format=3 uid="uid://j2nuep3bokkk"]
+[gd_scene load_steps=27 format=3 uid="uid://j2nuep3bokkk"]
 
 [ext_resource type="Script" uid="uid://mcumi4iyr1fr" path="res://project/player/player.gd" id="1_1p4bd"]
 [ext_resource type="Texture2D" uid="uid://c7d4v5qmgbel" path="res://assets/player/Basic Charakter Spritesheet.png" id="2_yjxgs"]
 [ext_resource type="PackedScene" uid="uid://cfrbd0rsow3vu" path="res://project/guns/shotgun.tscn" id="3_r42he"]
+[ext_resource type="Script" uid="uid://jw755fmchsbg" path="res://project/scenes/camera_2d.gd" id="4_opain"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3w37p"]
 atlas = ExtResource("2_yjxgs")
@@ -234,6 +235,10 @@ shape = SubResource("RectangleShape2D_ub51w")
 
 [node name="Shotgun" parent="." instance=ExtResource("3_r42he")]
 position = Vector2(2, -2)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(6, 6)
+script = ExtResource("4_opain")
 
 [connection signal="body_entered" from="Attack_left" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Attack_left" to="." method="on_left"]

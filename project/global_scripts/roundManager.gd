@@ -18,8 +18,10 @@ func _ready() -> void:
 	starting_nodes = get_child_count()
 	current_nodes = get_child_count()
 	position_to_next_wave()
-	
-	pass
+
+func reset() -> void:
+	enemies = []
+	spawnerList = []
 
 func _process(delta: float) -> void:
 	if(enemies.is_empty()):
@@ -30,7 +32,7 @@ func position_to_next_wave():
 	if current_nodes == starting_nodes:
 		current_wave += 1
 		for spawner in spawnerList:
-			spawner.spawn_enemies()
+				spawner.spawn_enemies()
 
 func currentRound() -> void: 
 	

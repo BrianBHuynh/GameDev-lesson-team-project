@@ -92,8 +92,11 @@ func _physics_process(delta: float) -> void:
 	$ProgressBar.value = health * 100 / maxHealth
 	
 	if health <= 0:
-		queue_free()
-		health = health - 1
+		for enemies in RoundManager.enemies:
+			enemies.queue_free()
+		RoundManager.reset()
+		
+		get_tree().change_scene_to_file("res://project/scenes/deathScreen.tscn")
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
