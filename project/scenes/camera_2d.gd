@@ -9,4 +9,4 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if GlobalVars.player != null:
-		position = GlobalVars.player.position
+		global_position = GlobalVars.player.global_position
