@@ -19,9 +19,10 @@ func _ready() -> void:
 	RoundManager.enemies.append(self)
 
 func death(): 
-	enemy_defeated.emit()
 	RoundManager.enemies.erase(self)
+	enemy_defeated.emit()
 	self.queue_free()
+	
 
 func kill_player():
 	if GlobalVars.player != null and position.distance_to(GlobalVars.player.position) < 20:
