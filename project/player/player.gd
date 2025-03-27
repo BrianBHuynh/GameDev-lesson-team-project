@@ -134,6 +134,8 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.play("walk_up")
 		
 	velocity = velocity.normalized()*SPEED
+	
+	$Label.text = "Round " + str(RoundManager.current_wave)
   
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
