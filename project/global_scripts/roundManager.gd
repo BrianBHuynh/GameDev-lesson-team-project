@@ -15,7 +15,7 @@ var sceneTeleportList : Array = []
 
 func _ready() -> void: 
 	
-	current_wave = 0
+	current_wave = 1
 	GlobalVars.current_wave = current_wave
 	starting_nodes = get_child_count()
 	current_nodes = get_child_count()
@@ -44,7 +44,8 @@ func position_to_next_wave():
 		else:
 			#Finish
 			for i in sceneTeleportList:
-				i.activate_teleporter()
+				if i != null:
+					i.activate_teleporter()
 
 func currentRound() -> void: 
 	
