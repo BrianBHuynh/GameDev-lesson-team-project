@@ -45,3 +45,23 @@ func cow_movement():
 				charge()
 		if distance < 15:
 			GlobalVars.player.health = GlobalVars.player.health - ATTACK
+		
+		#Move to Player
+		if direction && distance > 15:
+			velocity.x = direction.x * (SPEED / 4)
+			velocity.y = direction.y * (SPEED / 4)
+		else:
+			velocity.x = move_toward(velocity.x, 0, (SPEED / 4))
+		
+		if GlobalVars.player.position.x < position.x:
+			$AnimatedSprite2D.flip_h = true
+		else:
+			$AnimatedSprite2D.flip_h = false
+			
+		# Animation for being idle and running depending on distance from player 
+		if distance <= 15:
+			$AnimatedSprite2D.play("idle")
+		else: 
+			$AnimatedSprite2D.play("run")
+		move_and_slide()
+		

@@ -28,6 +28,6 @@ func process_attacking_delay():
 		shootable = false
 		shoot()
 	else:
-		if delay >= 2:
+		if delay >= 1.5:
 			delay = 0
 			shootable = true
