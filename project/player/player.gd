@@ -4,7 +4,7 @@ class_name Player
 #Make this thing walk as a top down character instead of as a platformer character (aka no gravity, up down left right)
 #Give them the ability to run
 #Add inputs via the Input manager (project -> project settings -> input manager) for up down left right (WASD, maybe arrow keys and maybe 
-var health = 10
+var health = 25
 var maxHealth = 10
 var damage = 100
 var attackable = true
