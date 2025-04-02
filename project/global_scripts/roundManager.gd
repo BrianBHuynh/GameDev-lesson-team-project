@@ -31,8 +31,11 @@ func _process(delta: float) -> void:
 func position_to_next_wave():
 	if current_nodes == starting_nodes:
 		current_wave += 1
-		for spawner in spawnerList:
+		for i in current_wave:
+			for spawner in spawnerList:
 				spawner.spawn_enemies()
+			for j in 5:
+				await get_tree().process_frame
 
 func currentRound() -> void: 
 	
