@@ -45,7 +45,7 @@ func position_to_next_wave():
 			#Finish
 			for i in sceneTeleportList:
 				if i != null:
-					i.activate_teleporter()
+					i.activate()
 
 func currentRound() -> void: 
 	
