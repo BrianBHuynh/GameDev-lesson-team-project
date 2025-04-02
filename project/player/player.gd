@@ -5,7 +5,7 @@ class_name Player
 #Give them the ability to run
 #Add inputs via the Input manager (project -> project settings -> input manager) for up down left right (WASD, maybe arrow keys and maybe 
 var health = 25
-var maxHealth = 10
+var maxHealth = 25
 var damage = 100
 var attackable = true
 var inRange: Array = []
