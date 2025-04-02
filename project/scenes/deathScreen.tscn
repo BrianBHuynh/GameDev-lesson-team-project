@@ -22,6 +22,7 @@ color = Color(0, 0, 0, 1)
 [node name="RichTextLabel" type="RichTextLabel" parent="ColorRect"]
 modulate = Color(1, 0.227451, 0, 1)
 custom_minimum_size = Vector2(100, 0)
+layout_mode = 0
 offset_left = 632.0
 offset_top = 202.0
 offset_right = 500632.0
