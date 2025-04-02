@@ -20,6 +20,6 @@ func _on_area_entered(area):
 			in_bounds = true
 
 func _on_area_exited(area):
-	if area == GlobalVars.player.CollisionShape2D:
+	if area.get_parent() == GlobalVars.player:
 		player_exited.emit()
 		in_bounds = false

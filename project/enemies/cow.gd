@@ -59,9 +59,5 @@ func cow_movement():
 			$AnimatedSprite2D.flip_h = false
 			
 		# Animation for being idle and running depending on distance from player 
-		if distance <= 15:
-			$AnimatedSprite2D.play("idle")
-		else: 
-			$AnimatedSprite2D.play("run")
 		move_and_slide()
 		
