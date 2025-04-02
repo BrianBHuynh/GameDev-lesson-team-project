@@ -15,11 +15,11 @@ var in_bounds : bool = false
 
 func _on_area_entered(area):
 	if enter_active == true:
-		if area == GlobalVars.player.hitbox:
+		if area == GlobalVars.player.CollisionShape2D:
 			player_entered.emit()
 			in_bounds = true
 
 func _on_area_exited(area):
-	if area == GlobalVars.player.hitbox:
+	if area == GlobalVars.player.CollisionShape2D:
 		player_exited.emit()
 		in_bounds = false
