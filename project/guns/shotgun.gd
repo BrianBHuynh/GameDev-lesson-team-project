@@ -10,7 +10,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	look_at(get_global_mouse_position())
-	if(delay < 15):
+	if(delay < 5):
 		delay = delay + 1
 	if Input.is_action_just_pressed("attack"):
 		process_attacking_delay()

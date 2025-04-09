@@ -2,6 +2,7 @@ extends Node2D
 
 var current_wave = 1
 var end_wave = -1
+var level_cleared : bool = false
 @export var chicken_scene: PackedScene
 @export var cow_scene: PackedScene
 
@@ -12,6 +13,7 @@ var wave_spawn_ended
 var spawnerList: Array = []
 var sceneTeleportList : Array = []
 
+signal wave_changed
 
 func _ready() -> void: 
 	
@@ -24,6 +26,7 @@ func _ready() -> void:
 func reset() -> void:
 	enemies = []
 	spawnerList = []
+	level_cleared = false
 
 func _process(delta: float) -> void:
 	if(enemies.is_empty() && spawnerList.size() > 0):
@@ -43,9 +46,11 @@ func position_to_next_wave():
 						await get_tree().process_frame
 		else:
 			#Finish
+			level_cleared = true
 			for i in sceneTeleportList:
 				if i != null:
 					i.activate()
+		wave_changed.emit()
 
 func currentRound() -> void: 
 	
