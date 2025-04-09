@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dciipfv6c2j4d"]
 
 [ext_resource type="Script" uid="uid://cgjaytlh5qdmv" path="res://scripts/ChangeSceneScript.gd" id="1_05t8n"]
-[ext_resource type="Script" uid="uid://dtagj7bcd7xwr" path="res://Scripts/SceneChangerScript.gd" id="1_au5fq"]
+[ext_resource type="Script" uid="uid://dtagj7bcd7xwr" path="res://scripts/SceneChangerScript.gd" id="1_au5fq"]
 [ext_resource type="Texture2D" uid="uid://0adngkpqy0qr" path="res://assets/objects/TeleportPadSceneOff.png" id="1_f2mel"]
 [ext_resource type="Script" uid="uid://bq7g54ac6b7j0" path="res://scripts/SignalBusScript.gd" id="2_n4c1y"]
 [ext_resource type="Script" uid="uid://0sr1m83f7pcv" path="res://scripts/TargetedSpriteSwapScript.gd" id="2_qc8mc"]
@@ -19,6 +19,10 @@ script = ExtResource("2_n4c1y")
 
 [node name="SceneChanger" type="Node2D" parent="."]
 script = ExtResource("1_05t8n")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
 
 [node name="ScreenFadeManager" type="Node2D" parent="."]
 script = ExtResource("3_hmcme")
@@ -38,7 +42,8 @@ script = ExtResource("2_qc8mc")
 new_sprite = ExtResource("3_kv88o")
 target_node_path = NodePath("..")
 
-[connection signal="group_signal" from="ActivationSignalManager" to="TeleportPadScene/SpriteSwapper" method="apply_new_sprite"]
 [connection signal="group_signal" from="ActivationSignalManager" to="PlayerCollideArea" method="activate_enter"]
-[connection signal="fade_finished" from="ScreenFadeManager" to="." method="change_scene"]
-[connection signal="player_entered" from="PlayerCollideArea" to="ScreenFadeManager" method="screen_fade"]
+[connection signal="group_signal" from="ActivationSignalManager" to="TeleportPadScene/SpriteSwapper" method="apply_new_sprite"]
+[connection signal="timeout" from="Timer" to="SceneChanger" method="switch_to_scene"]
+[connection signal="player_entered" from="PlayerCollideArea" to="Timer" method="start"]
+[connection signal="player_entered" from="PlayerCollideArea" to="ScreenFadeManager" method="screen_flash"]
