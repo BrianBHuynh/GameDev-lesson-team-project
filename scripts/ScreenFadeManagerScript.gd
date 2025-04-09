@@ -6,7 +6,7 @@ extends Node2D
 
 signal fade_finished
 
-func screen_fade():
+func screen_flash():
 	GlobalVars.main_ui.screen_flash(start_color, target_color, fade_time)
 	
 	await get_tree().create_timer(fade_time, false).timeout

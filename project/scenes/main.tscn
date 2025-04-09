@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://41dtdkh6bamp"]
+[gd_scene load_steps=22 format=4 uid="uid://41dtdkh6bamp"]
 
 [ext_resource type="PackedScene" uid="uid://j2nuep3bokkk" path="res://project/player/player.tscn" id="1_imogb"]
 [ext_resource type="Texture2D" uid="uid://b4jdxtypdhn4i" path="res://assets/player/Water.png" id="1_navob"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://v0vpyki2tey8" path="res://assets/player/Grass.png" id="4_faxjl"]
 [ext_resource type="PackedScene" uid="uid://c0t6enpiscrg1" path="res://save_menu.tscn" id="4_lmvhy"]
 [ext_resource type="Texture2D" uid="uid://ddb1ug238q0v7" path="res://assets/player/Wood_Bridge.png" id="8_lew50"]
+[ext_resource type="PackedScene" uid="uid://c4o18y1qrc43q" path="res://project/main_ui.tscn" id="10_jg3yv"]
 [ext_resource type="Script" uid="uid://nmhese8y8qdx" path="res://project/scenes/timer.gd" id="11_jk2o2"]
 [ext_resource type="PackedScene" uid="uid://o06jbkw3rev7" path="res://spawner.tscn" id="12_jg3yv"]
 
@@ -794,6 +795,7 @@ sources/2 = SubResource("TileSetAtlasSource_u2rp5")
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_wkd0f")
+end_wave = 1
 
 [node name="Water" type="TileMapLayer" parent="."]
 position = Vector2(-742, -76)
@@ -834,6 +836,8 @@ tile_set = SubResource("TileSet_24new")
 script = ExtResource("3_ju8xa")
 
 [node name="SaveMenu" parent="." instance=ExtResource("4_lmvhy")]
+
+[node name="MainUI" parent="." instance=ExtResource("10_jg3yv")]
 
 [node name="Timer" type="Timer" parent="."]
 script = ExtResource("11_jk2o2")
