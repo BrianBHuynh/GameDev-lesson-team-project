@@ -51,8 +51,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5snuf"]
-size = Vector2(16, 2)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3twe4"]
+radius = 3.0
+height = 15.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Enemy"]]
 motion_mode = 1
@@ -65,7 +66,8 @@ animation = &"move_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 12)
-shape = SubResource("RectangleShape2D_5snuf")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_3twe4")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 offset_left = -10.0

@@ -863,7 +863,6 @@ enemy_parent = NodePath("..")
 [node name="NextLevelTeleporter" parent="Enemies" instance=ExtResource("7_v56f8")]
 z_index = -1
 position = Vector2(-256, -120)
-new_scene = "res://project/scenes/main.tscn"
 
 [connection signal="target_value_reached" from="Enemies/EnemyCounter" to="Enemies/NextLevelTeleporter/ActivationSignalManager" method="emit_group_signal"]
 
