@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://bb6bwcajkdpyq"]
+
+[ext_resource type="Script" uid="uid://cajecpa82amr2" path="res://scripts/bullet_powerup_script.gd" id="1_m6qin"]
+[ext_resource type="PackedScene" uid="uid://b5m3ooq64m1oj" path="res://project/bullets/bullet_wing.tscn" id="2_5mjv7"]
+[ext_resource type="Texture2D" uid="uid://c1ywoklrw6pfv" path="res://assets/guns/6.png" id="2_kmd0u"]
+[ext_resource type="PackedScene" uid="uid://cca6ikec3gmmm" path="res://player_collide_area.tscn" id="3_5mjv7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kmd0u"]
+size = Vector2(20, 10)
+
+[node name="BulletPowerup" type="Node2D"]
+script = ExtResource("1_m6qin")
+bullet = ExtResource("2_5mjv7")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+rotation = -1.5708
+texture = ExtResource("2_kmd0u")
+
+[node name="PlayerCollideArea" parent="." instance=ExtResource("3_5mjv7")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCollideArea"]
+shape = SubResource("RectangleShape2D_kmd0u")
+
+[connection signal="player_entered" from="PlayerCollideArea" to="." method="_on_player_collide_area_player_entered"]
