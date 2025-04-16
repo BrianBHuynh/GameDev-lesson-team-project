@@ -3,7 +3,7 @@ extends Node2D
 
 @export var chicken_scene: PackedScene
 @export var cow_scene: PackedScene 
-var EnemyLinks: Array = ["res://project/enemies/cow.tscn", "res://project/enemies/chicken.tscn"]
+var EnemyLinks: Array = ["res://project/enemies/cow.tscn", "res://project/enemies/chicken.tscn", "res://project/enemies/creepychicken.tscn"]
 
 func _ready() -> void: 
 	
