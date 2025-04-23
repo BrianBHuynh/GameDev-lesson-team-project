@@ -1,8 +1,56 @@
-[gd_scene load_steps=18 format=3 uid="uid://1hbbb7meyffs"]
+[gd_scene load_steps=30 format=3 uid="uid://1hbbb7meyffs"]
 
 [ext_resource type="Script" uid="uid://bs0pq5j5jlkhq" path="res://project/enemies/dino.gd" id="1_5xy4b"]
 [ext_resource type="Texture2D" uid="uid://cyqy2e7tcwj58" path="res://assets/enemies/DinoSprites - vita.png" id="2_5xy4b"]
-[ext_resource type="Texture2D" uid="uid://dqbihfikkngrv" path="res://assets/objects/TeleportPad.png" id="2_pxycp"]
+[ext_resource type="Texture2D" uid="uid://bhkod85uatfek" path="res://assets/explosion_animations/Explosion 2 SpriteSheet.png" id="2_pxycp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1yuy"]
+atlas = ExtResource("2_pxycp")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsowg"]
+atlas = ExtResource("2_pxycp")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ftfi"]
+atlas = ExtResource("2_pxycp")
+region = Rect2(384, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2l5wm"]
+atlas = ExtResource("2_pxycp")
+region = Rect2(432, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rawig"]
+atlas = ExtResource("2_pxycp")
+region = Rect2(480, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7c2ju"]
+atlas = ExtResource("2_pxycp")
+region = Rect2(528, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4kwg"]
+atlas = ExtResource("2_pxycp")
+region = Rect2(576, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgf0g"]
+atlas = ExtResource("2_pxycp")
+region = Rect2(624, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gomu1"]
+atlas = ExtResource("2_pxycp")
+region = Rect2(672, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5whyq"]
+atlas = ExtResource("2_pxycp")
+region = Rect2(720, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7e8qu"]
+atlas = ExtResource("2_pxycp")
+region = Rect2(768, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2qyf"]
+atlas = ExtResource("2_pxycp")
+region = Rect2(816, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pxycp"]
 atlas = ExtResource("2_5xy4b")
@@ -56,11 +104,44 @@ region = Rect2(552, 0, 24, 24)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_pxycp")
+"texture": SubResource("AtlasTexture_q1yuy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsowg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ftfi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2l5wm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rawig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7c2ju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4kwg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sgf0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gomu1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5whyq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7e8qu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k2qyf")
 }],
 "loop": true,
 "name": &"explosion",
-"speed": 5.0
+"speed": 11.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -109,11 +190,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_byfkl"]
-radius = 1.0
-height = 10.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pxycp"]
+size = Vector2(16, 10)
 
-[node name="Chicken" type="CharacterBody2D" groups=["Enemy"]]
+[node name="Dino" type="CharacterBody2D" groups=["Enemy"]]
+collision_mask = 0
 motion_mode = 1
 script = ExtResource("1_5xy4b")
 
@@ -121,13 +202,13 @@ script = ExtResource("1_5xy4b")
 texture_filter = 1
 position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_xr55b")
-animation = &"explosion"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0.5)
+position = Vector2(0, -6)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_byfkl")
+shape = SubResource("RectangleShape2D_pxycp")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 offset_left = -10.0

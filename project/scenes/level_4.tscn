@@ -13,7 +13,7 @@
 [ext_resource type="Script" uid="uid://nmhese8y8qdx" path="res://project/scenes/timer.gd" id="10_quw3l"]
 [ext_resource type="PackedScene" uid="uid://o06jbkw3rev7" path="res://spawner.tscn" id="11_3e7tq"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u1dfb"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t00ep"]
 texture = ExtResource("1_eid8l")
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -64,9 +64,9 @@ texture = ExtResource("1_eid8l")
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Water"
 terrain_set_0/terrain_0/color = Color(0.236712, 0.385966, 0.605136, 1)
-sources/0 = SubResource("TileSetAtlasSource_u1dfb")
+sources/0 = SubResource("TileSetAtlasSource_t00ep")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ckgsv"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_twler"]
 texture = ExtResource("2_t00ep")
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -673,7 +673,7 @@ texture = ExtResource("2_t00ep")
 7:6/0 = 0
 8:6/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5ahco"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x3feu"]
 texture = ExtResource("1_eid8l")
 0:0/0 = 0
 1:0/0 = 0
@@ -685,10 +685,10 @@ physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Grass"
 terrain_set_0/terrain_0/color = Color(0.619792, 0.0835397, 0.60979, 1)
-sources/0 = SubResource("TileSetAtlasSource_ckgsv")
-sources/1 = SubResource("TileSetAtlasSource_5ahco")
+sources/0 = SubResource("TileSetAtlasSource_twler")
+sources/1 = SubResource("TileSetAtlasSource_x3feu")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ee1h7"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gj5o6"]
 texture = ExtResource("5_gj5o6")
 0:0/0 = 0
 0:0/0/y_sort_origin = 15
@@ -754,7 +754,7 @@ texture = ExtResource("5_gj5o6")
 7:4/0 = 0
 8:4/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4a4pc"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u3gh1"]
 texture = ExtResource("6_u3gh1")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.875, -6.375, -6.875, 8, -8, 8, -8, -1.75, -8, -6.5)
@@ -787,8 +787,8 @@ physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
-sources/0 = SubResource("TileSetAtlasSource_ee1h7")
-sources/2 = SubResource("TileSetAtlasSource_4a4pc")
+sources/0 = SubResource("TileSetAtlasSource_gj5o6")
+sources/2 = SubResource("TileSetAtlasSource_u3gh1")
 
 [node name="level_4" type="Node2D"]
 script = ExtResource("1_t00ep")

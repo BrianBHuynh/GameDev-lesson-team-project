@@ -67,11 +67,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_byfkl"]
-radius = 1.0
-height = 10.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xd6ru"]
+size = Vector2(10, 10)
 
 [node name="Chicken" type="CharacterBody2D" groups=["Enemy"]]
+collision_mask = 0
 motion_mode = 1
 script = ExtResource("1_fcgc8")
 
@@ -79,13 +79,13 @@ script = ExtResource("1_fcgc8")
 texture_filter = 1
 position = Vector2(1, -4)
 sprite_frames = SubResource("SpriteFrames_xr55b")
-animation = &"explosion"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0.5)
+position = Vector2(0.5, -3.5)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_byfkl")
+shape = SubResource("RectangleShape2D_xd6ru")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 offset_left = -10.0
