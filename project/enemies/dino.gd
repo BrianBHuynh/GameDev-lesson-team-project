@@ -4,6 +4,7 @@ class_name Dino
 #Give them the ability to run for small periods of time (stamina mechanic?)
 #Give them a health value that can be decremented and will destroy them when < 0.0
 #Animate it!
+var notDying = true
 
 func _physics_process(delta: float) -> void:	
 	dino_movement()
@@ -32,7 +33,6 @@ func dino_movement():
 		# Handle jump.
 		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
-
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		
@@ -48,15 +48,17 @@ func dino_movement():
 			$AnimatedSprite2D.flip_h = false
 			
 		# Animation for being idle and running depending on distance from player 
-		if distance <= 15:
+		if distance <= 15 && notDying:
 			$AnimatedSprite2D.play("idle")
-		else: 
+		elif notDying and HEALTH > 0: 
 			$AnimatedSprite2D.play("run")
-		move_and_slide()
+		elif notDying:
+			notDying = false
+			$AnimatedSprite2D.play("explosion")
+			death()
 
 func death():
-	$AnimatedSprite2D.play("explosion")
-	await get_tree().create_timer(1).timeout
-	RoundManager.enemies.erase(self)
-	enemy_defeated.emit()
-	self.queue_free()
+		await get_tree().create_timer(1).timeout
+		RoundManager.enemies.erase(self)
+		enemy_defeated.emit()
+		self.queue_free()
