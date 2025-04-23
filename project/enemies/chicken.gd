@@ -42,7 +42,7 @@ func chicken_movement():
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 		
-		if GlobalVars.player.position.x < position.x:
+		if GlobalVars.player.global_position.x < global_position.x:
 			$AnimatedSprite2D.flip_h = true
 		else:
 			$AnimatedSprite2D.flip_h = false
