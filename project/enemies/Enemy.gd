@@ -1,8 +1,8 @@
 extends CharacterBody2D
 class_name Enemy
 
-const SPEED = 50
-const JUMP_VELOCITY = 5
+var SPEED = 50
+var JUMP_VELOCITY = 5
 var MAX_HEALTH = 100
 var HEALTH = 100
 var ATTACK = 1
