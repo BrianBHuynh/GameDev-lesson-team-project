@@ -5,6 +5,7 @@ var end_wave = -1
 var level_cleared : bool = false
 @export var chicken_scene: PackedScene
 @export var cow_scene: PackedScene
+@export var creepychicken_scene: PackedScene
 
 var starting_nodes: int 
 var enemies: Array = []

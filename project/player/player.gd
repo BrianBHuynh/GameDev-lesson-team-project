@@ -146,7 +146,8 @@ func _physics_process(delta: float) -> void:
 	save_dictionary["player_pose_y"] = global_position.y
 	
 
-
+func set_bullet_type(bullet : PackedScene):
+	$Shotgun.bullet = bullet
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

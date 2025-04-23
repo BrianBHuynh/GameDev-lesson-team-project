@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://0w2eynvcvskl" path="res://project/enemies/chicken.tscn" id="8_smlta"]
 [ext_resource type="Texture2D" uid="uid://b4jdxtypdhn4i" path="res://assets/player/Water.png" id="9_qsrq5"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gi03f"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dhan1"]
 texture = ExtResource("8_m5qth")
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -618,7 +618,7 @@ texture = ExtResource("8_m5qth")
 7:6/0 = 0
 8:6/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gu77m"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vpg1w"]
 texture = ExtResource("9_qsrq5")
 0:0/0 = 0
 1:0/0 = 0
@@ -630,8 +630,8 @@ physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Grass"
 terrain_set_0/terrain_0/color = Color(0.619792, 0.0835397, 0.60979, 1)
-sources/0 = SubResource("TileSetAtlasSource_gi03f")
-sources/1 = SubResource("TileSetAtlasSource_gu77m")
+sources/0 = SubResource("TileSetAtlasSource_dhan1")
+sources/1 = SubResource("TileSetAtlasSource_vpg1w")
 
 [node name="Map" type="Node2D"]
 
