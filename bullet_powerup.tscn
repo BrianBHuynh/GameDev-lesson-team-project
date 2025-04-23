@@ -11,6 +11,7 @@ size = Vector2(20, 10)
 [node name="BulletPowerup" type="Node2D"]
 script = ExtResource("1_m6qin")
 bullet = ExtResource("2_5mjv7")
+metadata/_edit_group_ = true
 
 [node name="Sprite" type="Sprite2D" parent="."]
 rotation = -1.5708

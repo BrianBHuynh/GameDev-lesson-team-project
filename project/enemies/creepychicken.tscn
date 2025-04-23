@@ -236,7 +236,8 @@ animations = [{
 radius = 1.0
 height = 10.0
 
-[node name="Chicken" type="CharacterBody2D" groups=["Enemy"]]
+[node name="CreepyChicken" type="CharacterBody2D" groups=["Enemy"]]
+collision_mask = 0
 motion_mode = 1
 script = ExtResource("1_s0im0")
 
