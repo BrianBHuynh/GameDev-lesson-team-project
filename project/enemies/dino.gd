@@ -1,15 +1,14 @@
 extends Enemy
-class_name CreepyChicken 
+class_name Dino 
 #Make this thing walk towards the player and and follow them around
 #Give them the ability to run for small periods of time (stamina mechanic?)
 #Give them a health value that can be decremented and will destroy them when < 0.0
 #Animate it!
 
-
 func _physics_process(delta: float) -> void:	
-	chicken_movement()
+	dino_movement()
 
-func chicken_movement():
+func dino_movement():
 	# Stops game from crashing bc the player is not dead
 	if GlobalVars.player != null:
 		var direction = global_position.direction_to(GlobalVars.player.global_position) 
@@ -38,12 +37,12 @@ func chicken_movement():
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		
 		if direction && distance > 15:
-			velocity.x = direction.x * SPEED
-			velocity.y = direction.y * SPEED
+			velocity.x = direction.x * 15
+			velocity.y = direction.y * 15
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 		
-		if GlobalVars.player.global_position.x < global_position.x:
+		if GlobalVars.player.position.x < position.x:
 			$AnimatedSprite2D.flip_h = true
 		else:
 			$AnimatedSprite2D.flip_h = false
@@ -54,3 +53,10 @@ func chicken_movement():
 		else: 
 			$AnimatedSprite2D.play("run")
 		move_and_slide()
+
+func death():
+	$AnimatedSprite2D.play("explosion")
+	await get_tree().create_timer(1).timeout
+	RoundManager.enemies.erase(self)
+	enemy_defeated.emit()
+	self.queue_free()

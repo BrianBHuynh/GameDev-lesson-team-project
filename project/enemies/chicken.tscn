@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://0w2eynvcvskl"]
+[gd_scene load_steps=12 format=3 uid="uid://0w2eynvcvskl"]
 
 [ext_resource type="Texture2D" uid="uid://cjei3bj872fs4" path="res://assets/enemies/Free Chicken Sprites.png" id="1_8tjvv"]
 [ext_resource type="Script" uid="uid://drbykf7f8iafr" path="res://project/enemies/chicken.gd" id="1_fcgc8"]
+[ext_resource type="Texture2D" uid="uid://dqbihfikkngrv" path="res://assets/objects/TeleportPad.png" id="2_xd6ru"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4faey"]
 atlas = ExtResource("1_8tjvv")
@@ -29,6 +30,14 @@ region = Rect2(48, 16, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xr55b"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xd6ru")
+}],
+"loop": true,
+"name": &"explosion",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4faey")
@@ -70,7 +79,7 @@ script = ExtResource("1_fcgc8")
 texture_filter = 1
 position = Vector2(1, -4)
 sprite_frames = SubResource("SpriteFrames_xr55b")
-animation = &"run"
+animation = &"explosion"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
