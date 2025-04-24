@@ -21,12 +21,12 @@ func _ready():
 func save_game():
 	#Wait if already running
 	if save_task_id != -1:
-		print_debug("Waiting for save...")
+		#print_debug("Waiting for save...")
 		WorkerThreadPool.wait_for_group_task_completion(save_task_id)
 		print_debug("Done waiting for save.")
 	
 	#Perform save and wait for completion
-	print_debug("Begin multithread-save")
+	#print_debug("Begin multithread-save")
 	save_task_id = WorkerThreadPool.add_task(save_game_process)
 	WorkerThreadPool.wait_for_task_completion(save_task_id)
 	

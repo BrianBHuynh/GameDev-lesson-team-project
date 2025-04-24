@@ -9,7 +9,7 @@ var EnemyLinks: Array = ["res://project/enemies/cow.tscn", "res://project/enemie
 func _ready() -> void: 
 	
 	RoundManager.spawnerList.append(self)
-	print(RoundManager.spawnerList)
+	#print(RoundManager.spawnerList)
 	await get_tree().process_frame
 	spawn_enemies()
 

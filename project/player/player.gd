@@ -25,24 +25,24 @@ var arrayDown = []
 func _ready() -> void:
 	save_dictionary = await Saves.get_save_dictionary()
 	GlobalVars.player = self
-	print(health)
-	print(GlobalVars.player.health)
+	#print(health)
+	#print(GlobalVars.player.health)
 	
 	#Setup
 	#global_position.x = save_dictionary.get_or_add("player_pose_x", 0)
 	#global_position.y = save_dictionary.get_or_add("player_pose_y", 0)
-	print_debug("Loaded player at: " + str(global_position))
+	#print_debug("Loaded player at: " + str(global_position))
 
 func _physics_process(_delta: float) -> void:
 	if attackable == true and Input.is_action_pressed("attack"):
 		attackable = false
 		for enemies in inRange:
 			enemies.HEALTH = enemies.HEALTH-damage
-			print("Attacking")
-		print("on cooldown")
+			#print("Attacking")
+		#print("on cooldown")
 		await get_tree().create_timer(2.0).timeout
 		attackable = true
-		print("off cooldown")
+		#print("off cooldown")
 			
 	if Input.is_action_just_pressed("Up"):
 		latestKey = "Up"
@@ -152,7 +152,7 @@ func set_bullet_type(bullet : PackedScene):
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Enemy"):
-		print("CHICKEN")
+		#print("CHICKEN")
 		inRange.append(body)
 
 
@@ -160,19 +160,19 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 	inRange.erase(body)
 
 func on_right(body: Node2D) -> void:
-	print("ON RIGHT")
+	#print("ON RIGHT")
 	arrayRight.append(body)
 
 func on_left(body: Node2D) -> void:
-	print("ON LEFT")
+	#print("ON LEFT")
 	arrayLeft.append(body)
 
 func on_up(body: Node2D) -> void:
-	print("ON UP")
+	#print("ON UP")
 	arrayUp.append(body)
 
 func on_down(body: Node2D) -> void:
-	print("ON DOWN")
+	#print("ON DOWN")
 	arrayDown.append(body)
 
 

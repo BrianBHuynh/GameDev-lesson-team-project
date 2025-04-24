@@ -20,7 +20,7 @@ func charge():
 	tween.tween_property(self, "position", playerx, 0.5)
 	
 	await get_tree().create_timer(3.0).timeout
-	print("Cow Charging")
+	#print("Cow Charging")
 	charging = false
 	
 func cow_movement():

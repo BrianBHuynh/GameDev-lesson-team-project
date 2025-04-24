@@ -31,7 +31,7 @@ func reset() -> void:
 
 func _process(_delta: float) -> void:
 	if(enemies.is_empty() && spawnerList.size() > 0):
-		print("Round Over")
+		#print("Round Over")
 		position_to_next_wave()
 
 func position_to_next_wave():
