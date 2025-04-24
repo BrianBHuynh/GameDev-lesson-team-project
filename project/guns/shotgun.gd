@@ -16,6 +16,10 @@ func _physics_process(_delta):
 		delay -= 1
 	if Input.is_action_pressed("attack") && delay <= 0:
 		shoot()
+	if $muzzle.global_position.x < GlobalVars.player.global_position.x:
+		scale.y = -1
+	else:
+		scale.y = 1
 
 func shoot():
 	# Create a new instance of the Mob scene.
