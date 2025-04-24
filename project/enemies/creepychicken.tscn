@@ -245,7 +245,7 @@ script = ExtResource("1_s0im0")
 texture_filter = 1
 position = Vector2(1, -4)
 sprite_frames = SubResource("SpriteFrames_xr55b")
-animation = &"idle"
+animation = &"attack"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
