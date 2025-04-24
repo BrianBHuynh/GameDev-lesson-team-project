@@ -13,7 +13,7 @@ func _ready() -> void:
 	HEALTH = 200
 	ATTACK = 10
 
-func _physics_process(delta: float) -> void:	
+func _physics_process(_delta: float) -> void:	
 	chicken_movement()
 
 func chicken_movement():
@@ -24,8 +24,7 @@ func chicken_movement():
 	
 		kill_player()
 		
-		HealthBar.value = (HEALTH * 100) / MAX_HEALTH
-		HealthBar.min_value
+		HealthBar.value = (HEALTH * 100.0) / MAX_HEALTH
 		# Add the gravity.
 		if not is_on_floor():
 			pass

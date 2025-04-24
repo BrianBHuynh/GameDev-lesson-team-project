@@ -6,7 +6,7 @@ class_name Cow
 var charging = false
 var timer = Timer.new()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	cow_movement()
 
 func charge():
@@ -31,8 +31,7 @@ func cow_movement():
 	
 		kill_player()
 		
-		HealthBar.value = (HEALTH * 100) / MAX_HEALTH
-		HealthBar.min_value
+		HealthBar.value = (HEALTH * 100.0) / MAX_HEALTH
 		# Add the gravity.
 		if not is_on_floor():
 			pass
@@ -48,10 +47,10 @@ func cow_movement():
 		
 		#Move to Player
 		if direction && distance > 15:
-			velocity.x = direction.x * (SPEED / 4)
-			velocity.y = direction.y * (SPEED / 4)
+			velocity.x = direction.x * (SPEED / 4.0)
+			velocity.y = direction.y * (SPEED / 4.0)
 		else:
-			velocity.x = move_toward(velocity.x, 0, (SPEED / 4))
+			velocity.x = move_toward(velocity.x, 0, (SPEED / 4.0))
 		
 		if GlobalVars.player.global_position.x < global_position.x:
 			$AnimatedSprite2D.flip_h = true

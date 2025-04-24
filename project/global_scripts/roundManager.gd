@@ -29,7 +29,7 @@ func reset() -> void:
 	spawnerList = []
 	level_cleared = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if(enemies.is_empty() && spawnerList.size() > 0):
 		print("Round Over")
 		position_to_next_wave()

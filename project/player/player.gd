@@ -33,7 +33,7 @@ func _ready() -> void:
 	#global_position.y = save_dictionary.get_or_add("player_pose_y", 0)
 	print_debug("Loaded player at: " + str(global_position))
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if attackable == true and Input.is_action_pressed("attack"):
 		attackable = false
 		for enemies in inRange:
@@ -89,7 +89,7 @@ func _physics_process(delta: float) -> void:
 	$StaminaBar.value = stamina
 #endregion
 
-	$ProgressBar.value = health * 100 / maxHealth
+	$ProgressBar.value = health * 100.0 / maxHealth
 	
 	if health <= 0:
 		for enemies in RoundManager.enemies:

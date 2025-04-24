@@ -6,7 +6,7 @@ class_name Dino
 #Animate it!
 var notDying = true
 
-func _physics_process(delta: float) -> void:	
+func _physics_process(_delta: float) -> void:	
 	dino_movement()
 
 func dino_movement():
@@ -17,8 +17,7 @@ func dino_movement():
 	
 		kill_player()
 		
-		HealthBar.value = (HEALTH * 100) / MAX_HEALTH
-		HealthBar.min_value
+		HealthBar.value = (HEALTH * 100.0) / MAX_HEALTH
 		# Add the gravity.
 		if not is_on_floor():
 			pass
@@ -56,6 +55,7 @@ func dino_movement():
 			notDying = false
 			$AnimatedSprite2D.play("explosion")
 			death()
+		move_and_slide()
 
 func death():
 		await get_tree().create_timer(1).timeout
