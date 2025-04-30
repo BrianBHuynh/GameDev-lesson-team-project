@@ -194,6 +194,7 @@ animations = [{
 size = Vector2(16, 10)
 
 [node name="Dino" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 2
 collision_mask = 0
 motion_mode = 1
 script = ExtResource("1_5xy4b")
