@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://c1gana3jq078l"]
+[gd_scene load_steps=24 format=4 uid="uid://c1gana3jq078l"]
 
 [ext_resource type="Script" uid="uid://bauo33u6weag4" path="res://project/scenes/level_5.gd" id="1_5dp0n"]
 [ext_resource type="Texture2D" uid="uid://b4jdxtypdhn4i" path="res://assets/player/Water.png" id="1_r1ec8"]
@@ -12,8 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://c4o18y1qrc43q" path="res://project/main_ui.tscn" id="9_u1c7h"]
 [ext_resource type="Script" uid="uid://nmhese8y8qdx" path="res://project/scenes/timer.gd" id="10_xvv6r"]
 [ext_resource type="PackedScene" uid="uid://o06jbkw3rev7" path="res://spawner.tscn" id="11_iu8fy"]
+[ext_resource type="PackedScene" uid="uid://bb6bwcajkdpyq" path="res://bullet_powerup.tscn" id="13_3mgou"]
+[ext_resource type="PackedScene" uid="uid://jur0sjuu3orv" path="res://project/bullets/bullet_power.tscn" id="14_il6i3"]
+[ext_resource type="Texture2D" uid="uid://bnvx2lgwl7whk" path="res://assets/guns/BulletPower.png" id="15_osfk4"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wfdic"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k071y"]
 texture = ExtResource("1_r1ec8")
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -64,9 +67,9 @@ texture = ExtResource("1_r1ec8")
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Water"
 terrain_set_0/terrain_0/color = Color(0.236712, 0.385966, 0.605136, 1)
-sources/0 = SubResource("TileSetAtlasSource_wfdic")
+sources/0 = SubResource("TileSetAtlasSource_k071y")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_52ndb"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u1c7h"]
 texture = ExtResource("2_5dp0n")
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -673,7 +676,7 @@ texture = ExtResource("2_5dp0n")
 7:6/0 = 0
 8:6/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u4vcv"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xvv6r"]
 texture = ExtResource("1_r1ec8")
 0:0/0 = 0
 1:0/0 = 0
@@ -685,10 +688,10 @@ physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Grass"
 terrain_set_0/terrain_0/color = Color(0.619792, 0.0835397, 0.60979, 1)
-sources/0 = SubResource("TileSetAtlasSource_52ndb")
-sources/1 = SubResource("TileSetAtlasSource_u4vcv")
+sources/0 = SubResource("TileSetAtlasSource_u1c7h")
+sources/1 = SubResource("TileSetAtlasSource_xvv6r")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g4vxw"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iu8fy"]
 texture = ExtResource("5_3mgou")
 0:0/0 = 0
 0:0/0/y_sort_origin = 15
@@ -754,7 +757,7 @@ texture = ExtResource("5_3mgou")
 7:4/0 = 0
 8:4/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hpgi3"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wfdic"]
 texture = ExtResource("6_il6i3")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.875, -6.375, -6.875, 8, -8, 8, -8, -1.75, -8, -6.5)
@@ -787,8 +790,8 @@ physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
-sources/0 = SubResource("TileSetAtlasSource_g4vxw")
-sources/2 = SubResource("TileSetAtlasSource_hpgi3")
+sources/0 = SubResource("TileSetAtlasSource_iu8fy")
+sources/2 = SubResource("TileSetAtlasSource_wfdic")
 
 [node name="Level5" type="Node2D"]
 script = ExtResource("1_5dp0n")
@@ -865,3 +868,48 @@ position = Vector2(-161, -314)
 
 [node name="spawner12" parent="." instance=ExtResource("11_iu8fy")]
 position = Vector2(-274, -314)
+
+[node name="BulletPowerup2" parent="." instance=ExtResource("13_3mgou")]
+position = Vector2(-421, -312)
+bullet = ExtResource("14_il6i3")
+
+[node name="Sprite" parent="BulletPowerup2" index="0"]
+texture = ExtResource("15_osfk4")
+
+[node name="BulletPowerup3" parent="." instance=ExtResource("13_3mgou")]
+position = Vector2(-14, 591)
+bullet = ExtResource("14_il6i3")
+
+[node name="Sprite" parent="BulletPowerup3" index="0"]
+texture = ExtResource("15_osfk4")
+
+[node name="BulletPowerup4" parent="." instance=ExtResource("13_3mgou")]
+position = Vector2(-674, 342)
+bullet = ExtResource("14_il6i3")
+
+[node name="Sprite" parent="BulletPowerup4" index="0"]
+texture = ExtResource("15_osfk4")
+
+[node name="BulletPowerup5" parent="." instance=ExtResource("13_3mgou")]
+position = Vector2(237, -62)
+bullet = ExtResource("14_il6i3")
+
+[node name="Sprite" parent="BulletPowerup5" index="0"]
+texture = ExtResource("15_osfk4")
+
+[node name="BulletPowerup" parent="." instance=ExtResource("13_3mgou")]
+position = Vector2(-33, -317)
+
+[node name="BulletPowerup6" parent="." instance=ExtResource("13_3mgou")]
+position = Vector2(-670, -65)
+
+[node name="BulletPowerup7" parent="." instance=ExtResource("13_3mgou")]
+position = Vector2(-421, 595)
+
+[node name="BulletPowerup8" parent="." instance=ExtResource("13_3mgou")]
+position = Vector2(233, 346)
+
+[editable path="BulletPowerup2"]
+[editable path="BulletPowerup3"]
+[editable path="BulletPowerup4"]
+[editable path="BulletPowerup5"]

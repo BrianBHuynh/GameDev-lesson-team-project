@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://c1476uy7d0p8v"]
+[gd_scene load_steps=24 format=4 uid="uid://c1476uy7d0p8v"]
 
 [ext_resource type="Texture2D" uid="uid://b4jdxtypdhn4i" path="res://assets/player/Water.png" id="1_eid8l"]
 [ext_resource type="Script" uid="uid://gndfct77qskq" path="res://project/scenes/level_4.gd" id="1_t00ep"]
@@ -12,6 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://c4o18y1qrc43q" path="res://project/main_ui.tscn" id="9_7fmxj"]
 [ext_resource type="Script" uid="uid://nmhese8y8qdx" path="res://project/scenes/timer.gd" id="10_quw3l"]
 [ext_resource type="PackedScene" uid="uid://o06jbkw3rev7" path="res://spawner.tscn" id="11_3e7tq"]
+[ext_resource type="PackedScene" uid="uid://bb6bwcajkdpyq" path="res://bullet_powerup.tscn" id="13_gj5o6"]
+[ext_resource type="PackedScene" uid="uid://jur0sjuu3orv" path="res://project/bullets/bullet_power.tscn" id="14_u3gh1"]
+[ext_resource type="Texture2D" uid="uid://bnvx2lgwl7whk" path="res://assets/guns/BulletPower.png" id="15_5gupt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t00ep"]
 texture = ExtResource("1_eid8l")
@@ -847,3 +850,26 @@ position = Vector2(0, 134)
 
 [node name="spawner6" parent="." instance=ExtResource("11_3e7tq")]
 position = Vector2(-368, 135)
+
+[node name="BulletPowerup" parent="." instance=ExtResource("13_gj5o6")]
+position = Vector2(-369, -250)
+
+[node name="BulletPowerup2" parent="." instance=ExtResource("13_gj5o6")]
+position = Vector2(-1, 518)
+
+[node name="BulletPowerup3" parent="." instance=ExtResource("13_gj5o6")]
+position = Vector2(0, -253)
+bullet = ExtResource("14_u3gh1")
+
+[node name="Sprite" parent="BulletPowerup3" index="0"]
+texture = ExtResource("15_5gupt")
+
+[node name="BulletPowerup4" parent="." instance=ExtResource("13_gj5o6")]
+position = Vector2(-369, 517)
+bullet = ExtResource("14_u3gh1")
+
+[node name="Sprite" parent="BulletPowerup4" index="0"]
+texture = ExtResource("15_5gupt")
+
+[editable path="BulletPowerup3"]
+[editable path="BulletPowerup4"]
