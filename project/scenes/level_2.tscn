@@ -1011,5 +1011,6 @@ enemy_parent = NodePath("..")
 [node name="SceneTeleporterManualActivate" parent="." instance=ExtResource("13_515cu")]
 z_index = -1
 position = Vector2(616, -552)
+teleport_scene = "uid://c1476uy7d0p8v"
 
 [editable path="YSortObjects/BulletPowerup2"]
