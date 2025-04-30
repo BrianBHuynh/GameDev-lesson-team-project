@@ -803,7 +803,7 @@ tile_set = SubResource("TileSet_r5qby")
 
 [node name="SceneTeleporterManualActivate" parent="." instance=ExtResource("3_rdacg")]
 position = Vector2(-970, 570)
-teleport_scene = "uid://ghfxxktd22wj"
+teleport_scene = "uid://et4vb5knjgom"
 
 [node name="YSort" type="Node2D" parent="."]
 y_sort_enabled = true
