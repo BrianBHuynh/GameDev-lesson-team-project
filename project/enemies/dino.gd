@@ -36,10 +36,10 @@ func dino_movement():
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		
 		if direction && distance > 15:
-			velocity.x = direction.x * 15
-			velocity.y = direction.y * 15
+			velocity.x = direction.x * 35
+			velocity.y = direction.y * 35
 		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
+			velocity.x = move_toward(velocity.x, 0, 55)
 		
 		if GlobalVars.player.position.x < position.x:
 			$AnimatedSprite2D.flip_h = true

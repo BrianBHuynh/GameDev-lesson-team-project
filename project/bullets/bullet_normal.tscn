@@ -9,13 +9,13 @@ height = 10.0
 
 [node name="Bullet" type="Node2D"]
 script = ExtResource("1_883no")
-damage = 5
 
 [node name="BulletSprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_sulqk")
 
 [node name="BulletArea" type="Area2D" parent="."]
 collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BulletArea"]
 rotation = 1.5708

@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var damage : int = 2
+@export var damage : int = 10
 var velocity : Vector2
 const PHYSICS_FRAMES_PER_SECOND : int = 60
 

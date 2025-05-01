@@ -237,6 +237,7 @@ radius = 15.0
 height = 62.0
 
 [node name="CreepyChicken" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 2
 collision_mask = 0
 motion_mode = 1
 script = ExtResource("1_s0im0")
@@ -257,4 +258,5 @@ offset_top = -18.0
 offset_right = 92.0
 offset_bottom = 9.0
 scale = Vector2(0.2, 0.2)
+max_value = 200.0
 value = 100.0

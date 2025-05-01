@@ -28,4 +28,4 @@ func shoot():
 	mob.global_position = $muzzle.global_position
 	mob.global_rotation = self.global_position.angle_to_point(get_global_mouse_position())
 	mob.velocity = Vector2(200, 200) * self.global_position.direction_to(get_global_mouse_position())
-	delay = 6
+	delay = 18

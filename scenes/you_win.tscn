@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://et4vb5knjgom"]
+
+[ext_resource type="Texture2D" uid="uid://dls868uca85nj" path="res://assets/ui/YouWin.png" id="1_iblaa"]
+
+[node name="YouWin" type="Sprite2D"]
+position = Vector2(960, 540)
+texture = ExtResource("1_iblaa")
