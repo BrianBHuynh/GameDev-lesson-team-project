@@ -25,6 +25,9 @@ func _ready() -> void:
 	position_to_next_wave()
 
 func reset() -> void:
+	current_wave = 1
+	for enemy in RoundManager.enemies:
+		enemy.death()
 	enemies = []
 	spawnerList = []
 	level_cleared = false

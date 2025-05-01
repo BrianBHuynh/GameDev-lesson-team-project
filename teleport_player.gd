@@ -12,6 +12,7 @@ func _ready():
 func teleport():
 	if player_can_teleport == false && teleporter_active == true:
 		player_can_teleport = true
+		RoundManager.reset()
 		
 		GlobalVars.main_ui.screen_flash(Color.TRANSPARENT, Color.WHITE, 0.25)
 		await GlobalVars.main_ui.screen_flash_finished

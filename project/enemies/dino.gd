@@ -58,7 +58,7 @@ func dino_movement():
 		move_and_slide()
 
 func death():
-		await get_tree().create_timer(1).timeout
-		RoundManager.enemies.erase(self)
-		enemy_defeated.emit()
-		self.queue_free()
+	RoundManager.enemies.erase(self)
+	await get_tree().create_timer(1).timeout
+	enemy_defeated.emit()
+	self.queue_free()

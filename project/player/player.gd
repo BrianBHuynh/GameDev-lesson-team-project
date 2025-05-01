@@ -55,7 +55,7 @@ func _physics_process(_delta: float) -> void:
 #region Sprint, Dodge, and Stamina stuff
 
 	if Input.is_action_pressed("Sprint") && !stamRest && stamina >= 0: #no infinite sprint
-		SPEED = 150.0 #1.5 times the speed of the plc
+		SPEED = 135.0 #1.5 times the speed of the plc
 		stamina = stamina - 2 #reduce stamina so plc can't sprint infinitely
 	else: #handles release of SHIFT key
 		SPEED = 100.0 #bring speed back to walking pace for plc
@@ -92,8 +92,6 @@ func _physics_process(_delta: float) -> void:
 	$ProgressBar.value = health * 100.0 / maxHealth
 	
 	if health <= 0:
-		for enemies in RoundManager.enemies:
-			enemies.queue_free()
 		RoundManager.reset()
 		
 		get_tree().change_scene_to_file("res://project/scenes/deathScreen.tscn")

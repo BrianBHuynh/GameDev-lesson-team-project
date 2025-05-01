@@ -9,7 +9,7 @@ height = 10.0
 
 [node name="BulletPower" type="Node2D"]
 script = ExtResource("1_yl1gi")
-damage = 20
+damage = 22
 metadata/_edit_group_ = true
 
 [node name="BulletSprite" type="Sprite2D" parent="."]
