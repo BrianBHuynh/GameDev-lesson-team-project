@@ -19,10 +19,10 @@ func _ready() -> void:
 	RoundManager.enemies.append(self)
 
 func death():
-	print("before" + str(RoundManager.enemies)) 
+	#print("before" + str(RoundManager.enemies)) 
 	RoundManager.enemies.erase(self)
 	enemy_defeated.emit()
-	print(RoundManager.enemies)
+	#print(RoundManager.enemies)
 	self.queue_free()
 	
 
